@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 // sql to create table
-$sql = "CREATE TABLE user (
+$sql = "CREATE TABLE flight_detail (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 flight_id VARCHAR(30) NOT NULL,
 airline_name VARCHAR(30) NOT NULL,

@@ -110,7 +110,7 @@ input[type=password]:focus {
 <script type="text/javascript">
     function change()
     {
-      window.location.href = "signup (2).php";
+      window.location.href = "signup.php";
     }
 </script>
 </head>
@@ -127,7 +127,7 @@ input[type=password]:focus {
       <input class="space" type="password" name="pwrd"></p>
       <input type="submit" value="sign in"></input>
     </form>
-	<p style="font-size:20px;color:white" id="space">Register : <a href="#" style="color:lightgreen" onclick="change()">Create account</a></p>
+	  <p style="font-size:20px;color:white" id="space">Register : <a href="#" style="color:lightgreen" onclick="change()">Create account</a></p>
   </div>
 
   </body>

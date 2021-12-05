@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
   $d_date = $_POST['d_date'];
   $no_of_seats = $_POST['no_of_seats'];
 
-  $sql="INSERT INTO userdb (flight_id,airline_name,flight_type,class_type,from_place,to_place,d_date,no_of_seats) 
+  $sql="INSERT INTO flight_detail (flight_id,airline_name,flight_type,class_type,from_place,to_place,d_date,no_of_seats) 
           VALUES('" . $flight_id . "','" . $airline_name . "','" . $flight_type . "','" . $class_type . "','" . $from_place . "','" . $to_place . "','" . $d_date . "','" . $no_of_seats . "')";
 
    $result=$conn->query($sql);
