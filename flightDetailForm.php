@@ -10,6 +10,57 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+    <script>
+      $("#form").validate({
+        rules: {
+          flight_id: {
+            required: true                        
+          },
+          airline_name: {
+            required: true
+          },
+          flight_type: {
+            required: true
+          },
+          class_type: {
+            required: true                        
+          },
+          from_place: {
+            required: true                        
+          },
+          to_place: {
+            required: true                        
+          },
+          d_date: {
+            required: true                        
+          },
+          no_of_seats: {
+            required: true                        
+          }
+        })
+      }); 
+    </script>
+    <style>
+        label{
+          color:white
+        }
+        .error {
+            color: red;
+        }
+        .bgroudcolor {
+            background: linear-gradient(to right, #000000, #636c6d);
+        }
+        .upload-btn{
+            background: white;
+            font-size: 20px;
+            font-weight: 400;
+            color: black;
+            border-radius: 26px;
+            border: 1px solid white;
+            margin-top: 20px;
+            width: 125px;
+        }
+    </style>
     <title>Flight Detail</title>
 </head>
 <body>
