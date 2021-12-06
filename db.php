@@ -18,33 +18,57 @@
   $country = $_REQUEST['country'];
   $zipcode = $_REQUEST['zipcode'];
   echo $email." ".$firstname." ".$lastname." ".$pswrd." ".$cpass." ".$bday." ".$nationality." ".$gender." ".$pnumber." ".$expdate." ".$ccode." ".$mnumber." ".$straddr." ".$city." ".$state." ".$country." ".$zipcode;
-//   $db="students";
-// //  for ($i= 0 ; $i < 6 ; $i++)
-// //  {
-//     $host = "localhost";
-//     $dbUsername = "root";
-//     $dbPassword = "";
-//     $db_name = $db;
-//   //  echo $db_name;
-//   if($pswrd == $cpass){
-//       $conn = new mysqli($host, $dbUsername, $dbPassword, $db_name);
-//       if (mysqli_connect_error())
-//        {
-//          echo "errror";
-//         die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
-//         }
-//        else{
-//          $q = "INSERT INTO `signin`(`first_name`,`last_name`,`enrollment_number`,`password`,`email`,`branch`,`year`) VALUES ('".$firstname."','".$lastname."','".$ennum."','".$pswrd."','".$email."','".$branch."','".$year."');";
+   $db="kjana_fame";
+$host = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $db_name = $db;
+     $conn = new mysqli($host, $dbUsername, $dbPassword, $db_name);
+      if (mysqli_connect_error())
+       {
+         echo "errror";
+        die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+        }
+       else{
+        $q = "INSERT INTO `kjana_psngr`(`first_name`, `last_name`, `dob`, `nationality`, `gender`, `pass_no`, `pass_exp`,`email`, `country_code`, `mobile_no`, `street`, `city`, `state`, `country`, `zipcode`, `c_val`, `password`) VALUES ('".$firstname."', '".$lastname."', '".$bday."','".$nationality."', '".$gender."', '".$pnumber."',
+         '".$expdate."','".$email."', '".$ccode."', '".$mnumber."', '".$straddr."', '".$city."', '".$state."', '".$country."', '".$zipcode."','P', '".$pswrd."');";
 
-//          if ($conn->query($q) === TRUE) {
-//            echo "inserted ";
-//         } else {
-//             echo "Error: " . $q . "<br>" . $conn->error;
-//                       }
+        echo $q;
+        if ($conn->query($q) === TRUE) {
+           echo "inserted ";
+        } else {
+            echo "Error: " . $q. "<br>" . $conn->error;
+                      }
 
-//         $conn->close();
-//        }
-//   }
+        $conn->close();
+      }
+
+//  for ($i= 0 ; $i < 6 ; $i++)
+//  {
+  //   $host = "localhost";
+  //   $dbUsername = "root";
+  //   $dbPassword = "";
+  //   $db_name = $db;
+  // //  echo $db_name;
+  // if($pswrd == $cpass){
+  //     $conn = new mysqli($host, $dbUsername, $dbPassword, $db_name);
+  //     if (mysqli_connect_error())
+  //      {
+  //        echo "errror";
+  //       die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+  //       }
+  //      else{
+         // $q = "INSERT INTO `signin`(`first_name`,`last_name`,`enrollment_number`,`password`,`email`,`branch`,`year`) VALUES ('".$firstname."','".$lastname."','".$ennum."','".$pswrd."','".$email."','".$branch."','".$year."');";
+
+  //        if ($conn->query($q) === TRUE) {
+  //          echo "inserted ";
+  //       } else {
+  //           echo "Error: " . $q . "<br>" . $conn->error;
+  //                     }
+
+  //       $conn->close();
+  //      }
+  // }
 //   else
 //   {
 //     echo "password dont match;";
