@@ -63,7 +63,7 @@
     </style>
     <title>Flight Detail</title>
 </head>
-<body>
+<body style="background-color:grey;">
     <!-- Header -->
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

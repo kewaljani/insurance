@@ -14,6 +14,24 @@
 
     <title>Flight Detail</title>
 </head>
+<style  type="text/css">
+    .img
+      {
+      margin-right:40px
+      }
+    .img:hover
+      {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5);
+      }
+    </style>
+    <script type="text/javascript">
+    function change(x)
+          {
+          window.location.href=x+".php";
+          }
+  </script>
 <body>
     <!-- Header -->
     <div>
@@ -46,9 +64,37 @@
         </nav>
     </div>
     <!-- Body -->
-    <div class="body_section">
-        Home
-    </div>
+    
+    <div class='row' style="height: 500px">
+		<div class='col-md-3'style="border:solid;">
+
+			<div class="row">
+				<div class="col">
+					
+					<div class="row pt-3">
+							<p style="font-size:30px;"><img src="plus.svg" height="50px" width="50px" class="img" onclick="change('flightDetailForm')" style="margin: 0 40px 0 40px" >Add Flight</p>
+						</div>
+
+
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col">
+					
+					<div class="row pt-3">
+							<p style="font-size:30px"><img src="cart.svg" height="50px" width="50px" class="img" onclick="change('insurance')"  style="margin: 0 40px 0 40px" >Add insurance</p>
+						</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class='col-md-9'style="border:solid;">
+			hello
+			
+		</div>
+	</div>
     <!-- Footer -->
     <div class="w">
 

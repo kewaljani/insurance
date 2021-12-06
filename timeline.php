@@ -36,7 +36,7 @@
       {
        width:100%;
        height:80%;
-      background-color:white;
+      background-color:grey;
       }
       a {
       text-decoration: none;
@@ -126,7 +126,7 @@
 				<div class="col">
 					
 					<div class="row pt-3">
-							<p style="font-size:30px;"><img src="plus.svg" height="50px" width="50px" class="img" onclick="change('flight')" style="margin: 0 40px 0 40px" >Add Flight</p>
+							<p style="font-size:30px;"><img src="plus.svg" height="50px" width="50px" class="img" onclick="change('flightDetailForm')" style="margin: 0 40px 0 40px" >Add Flight</p>
 						</div>
 
 
