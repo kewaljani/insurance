@@ -118,7 +118,7 @@ input[type=password]:focus {
 </style>
  <script type="text/javascript">
   function ValidateEmail(){
-    
+    var flag =0;
     var first=document.getElementById('fname').value;
     var last=document.getElementById('lname').value;
     var bday=document.getElementById('bdate').value;
@@ -140,58 +140,73 @@ input[type=password]:focus {
     {
     	alert("enter same passwrod as both the time")
     	return (false)
+    	flag =1
     }
-  //   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-  // {
-  //   return (true)
-  // }
-  // else{
-  //   alert("You have entered an invalid email address!")
-  //   return (false)
-  //  }
- //    if(first==="" || last=="")
- //    {
- //    	alert('please enter valid name');
- //    }
- //    var optimizedBirthday = bday.replace(/-/g, "/");
+    var passw=   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+if(pswrd.match(passw)) 
+{ 
+}
+else
+{ 
+alert('Wrong password format')
+flag =1;
+}
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+  {
+ 	}
+ 	else{
+ 		alert("Email format invalid")
+ 		return false;
+ 		flag =1
+ 	}
+  
+    if(first==="" || last=="")
+    {
+    	alert('please enter valid name');
+    	flag =1
+    }
+    var optimizedBirthday = bday.replace(/-/g, "/");
 
-	// //set date based on birthday at 01:00:00 hours GMT+0100 (CET)
-	// var myBirthday = new Date(optimizedBirthday);
+	//set date based on birthday at 01:00:00 hours GMT+0100 (CET)
+	var myBirthday = new Date(optimizedBirthday);
 
-	// // set current day on 01:00:00 hours GMT+0100 (CET)
-	// var currentDate = new Date().toJSON().slice(0,10)+' 01:00:00';
+	// set current day on 01:00:00 hours GMT+0100 (CET)
+	var currentDate = new Date().toJSON().slice(0,10)+' 01:00:00';
 
-	// // calculate age comparing current date and borthday
-	// var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
+	// calculate age comparing current date and borthday
+	var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
 
-	// if(myAge < 18) {
- //     	    alert("invalid birthday")
- //        }
- //    alert(bday)
-  //  var remail=document.getElementById('remail').value;
-  // if (nationality=="")
-  // {
-  // 	alert("please enter nationality")
-  // }
-  // if (gender=="")
-  // {
-  // 	alert("please enter gender")
+	if(myAge < 18) {
+     	    alert("invalid birthday below 18 years")
+     	    flag =1
+        }
+  if (nationality=="")
+  {
+  	alert("please enter nationality")
+  	flag =1
+  }
+  if (gender=="")
+  {
+  	alert("please enter gender")
+  	flag =1
 
-  // }
-  //  if (pnumber=="")
-  // {
-  // 	alert("please enter passport number")
-  	
-  // }
+  }
+   if (pnumber=="")
+  {
+  	alert("please enter passport number")
+  	flag =1
+  }
     var xhttp;
+    if (flag!=1)
+    {
     //alert(first,pswrd,last,email,enrollment,cpswr);
     xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
     xhttp.onreadystatechange = function()
     {
       if (xhttp.readyState == 4 && xhttp.status == 200)
       { // Check the status - if everything goes fine
-        alert(xhttp.response)
-         window.location.href="studentlogin.html"// display the content (response) from the serverside page
+       alert(xhttp.response)
+        window.location.href="login.php"// display the content (response) from the serverside page
       }
     }
 
@@ -199,7 +214,10 @@ input[type=password]:focus {
     parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last+ "&pswrd="+pswrd+ "&cpswrd="+cpswrd;
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(parameters);
-    
+    }
+    else{
+    	window.location.href="signup (2).php"
+    }
   }
   </script>
 

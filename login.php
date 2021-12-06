@@ -121,7 +121,7 @@ input[type=password]:focus {
   <div class="bg-text">
     <form action="check.php" method="post">
       <p style="font-size:20px">Login Id:<br>
-      <input class="space" size="40" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\S-\.]+)\.([a-zA-Z]{2,5})$" required title="improper email id" type="text" name="stdid">
+      <input class="space" size="40" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\S-\.]+)\.([a-zA-Z]{2,5})$" required title="improper email id" type="text" name="email">
       <br>
       Password:<br>
       <input class="space" type="password" name="pwrd"></p>
