@@ -1,0 +1,21 @@
+.header_css{
+
+}
+
+.body_section{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_light_detail{
+    border: 2px;
+    border: black;
+    border-radius: 5px;
+    background: linear-gradient(to right, #000000, #636c6d);
+}
+
+.text_white{
+    color: #ffffff !important;
+}
