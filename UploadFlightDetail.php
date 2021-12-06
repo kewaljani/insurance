@@ -23,10 +23,10 @@ if (isset($_POST['submit'])) {
    $result=$conn->query($sql);
   if ($result === TRUE) {
     echo "<script>alert('Flight Details added successfully')</script>";
-    // echo '<script>window.location="UserLogIn.php"</script>';
+    echo '<script>window.location="home.php"</script>';
   } else {
     echo "<script>alert('Please enter proper detail')</script>";
-    // echo '<script>window.location="UserSignUP.php"</script>';
+    echo '<script>window.location="flightDetailForm.php"</script>';
   }
 }
 ?>

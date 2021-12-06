@@ -1,121 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Times New Roman;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.bg-image {
-  /* The image used */
-  background-image: url("background.jpg");
-
-  /* Add the blur effect */
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Position text in the middle of the page/image */
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  border-radius: 10px;
-  border-color:black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 450px;
-  height: 400px;
-  padding: 20px;
-  text-align: center;
-}
-.space
-{
-  margin: 0 0 20px 0
-}
-.btn {
-/*  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);*/
-  background-color: #f1f1f1;
-  color: black;
-  font-size: 16px;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.btn:hover {
-  background-color: black;
-  color: white;
-}
-input[type=text] {
-  width: 250px;
-  height: 30px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-input[type=password] {
-  width: 250px;
-  height: 30px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
-input[type=text]:focus {
-  border: 3px solid black;
-}
-input[type=password]:focus {
-  border: 3px solid black;
-}
-#space{
-	margin:30px 0 0 0;
-}
-</style>
-<script type="text/javascript">
-    function change()
-    {
-      window.location.href = "signup.php";
-    }
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Css/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+      function change()
+      {
+        window.location.href = "signup.php";
+      }
+  </script>
 </head>
 <body>
-
+    <!-- Header -->
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <div class="raw w-100 d-flex justify-content-between">
+                        <div class="col">
+                            <a class="navbar-brand" href="#">Logo</a>
+                        </div>
+                        <div class="col">
+                            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login.php">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="signup.php">SignUp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+	</div>
+	<!-- Body -->
   <div class="bg-image"></div>
 
   <div class="bg-text">
@@ -125,7 +52,7 @@ input[type=password]:focus {
       <br>
       Password:<br>
       <input class="space" type="password" name="pwrd"></p>
-      <input type="submit" value="sign in"></input>
+      <button type="submit" class="btn btn-secondary" >Sign In</button>
     </form>
 	  <p style="font-size:20px;color:white" id="space">Register : <a href="#" style="color:lightgreen" onclick="change()">Create account</a></p>
   </div>
