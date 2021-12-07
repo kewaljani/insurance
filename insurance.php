@@ -55,50 +55,50 @@
 <title>Flight Detail</title>
 </head>
 <body style="background-color:grey;">
-    <!-- Header -->
-    <div class="row">
-      <div class="col">
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid ">
-              <div class="raw w-100 d-flex justify-content-between">
-                <div class="col">
-                  <a class="navbar-brand" href="#">Navbar</a>
-              </div>
-              <div class="col">
-                  <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                          <a class="nav-link" href="home.php">Home</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="timeLine.php">TimeLine</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="flightDetailForm.php">Flights</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="invoice.php">Invoice</a>
-                      </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SignUp</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">LogOut</a>
-                    </li>
-                </ul>
-            </div>
+   <!-- Header -->
+	<div class="row">
+		<div class="col">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <div class="raw w-100 d-flex justify-content-between">
+                        <div class="col">
+                            <a class="navbar-brand" href="#">LOGO</a>
+                        </div>
+                        <div class="col">
+                            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="home.php">TimeLine</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="flightDetailForm.php">Flights</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="insurance.php">Insurance</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="invoice.php">Invoice</a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="#">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">SignUp</a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="login.php">LogOut</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </div>
-</div>
-</nav>
-</div>
-</div>
+	</div>
 <!-- Body -->
 
-<div class="row g-3 pt-2 d-flex justify-content-center">
+<div class="row g-3 pt-2 d-flex justify-content-center body_section" style="background-color:grey">
     <div class="col-8">
         <form action="passengerdetails.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
             <div class="container">
@@ -123,9 +123,6 @@
                             </select>
                         </div>
                     </div>
-
-
-
                     <div class="row " style="margin-left:0;display:none;padding:0;"  id='agent' name='agent'>
                         <div class="row" style="padding:0;margin:0;width:100%">
                             <div class="col-6" class='agent'>
@@ -379,14 +376,6 @@
               </div>
           </div>
       </div> 
-
-
-
-
-
-
-
-
       <div class="row " style="padding:0;margin:0;width:100%;display:none"  id='airline' name='airline'>
         <div class='row' style="padding:0;margin:0;width:100%">
             <div class="col-6" class='agent' >

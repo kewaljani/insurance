@@ -12,24 +12,7 @@
     
     <title>Invoice</title>
 </head>
-<style  type="text/css">
-    .img
-      {
-      margin-right:40px
-      }
-    .img:hover
-      {
-      -ms-transform: scale(1.5); /* IE 9 */
-      -webkit-transform: scale(1.5); /* Safari 3-8 */
-      transform: scale(1.5);
-      }
-    </style>
-    <script type="text/javascript">
-    function change(x)
-          {
-          window.location.href=x+".php";
-          }
-  </script>
+
 <body style="background-color:grey">
     <!-- Header -->
 	<div class="row">
@@ -38,22 +21,22 @@
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
-                            <a class="navbar-brand" href="#">Navbar</a>
+                            <a class="navbar-brand" href="#">LOGO</a>
                         </div>
                         <div class="col">
                             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
                                 <ul class="navbar-nav me-auto">
                                     <li class="nav-item">
-                                    <a class="nav-link" href="home.php">Home</a>
+                                        <a class="nav-link" href="home.php">TimeLine</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" href="timeLine.php">TimeLine</a>
+                                        <a class="nav-link" href="flightDetailForm.php">Flights</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" href="flightDetailForm.php">Flights</a>
+                                        <a class="nav-link" href="insurance.php">Insurance</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" href="invoice.php">Invoice</a>
+                                        <a class="nav-link" href="invoice.php">Invoice</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link" href="#">Login</a>
@@ -76,12 +59,17 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Side bar -->
-            <div class="col-sm-4"></div>
+            <div class="col-sm-3 border-right custom_border navbar-nav me-auto" >
+                <!-- <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="home.php">TimeLine</a></h5></div>
+                <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="flightDetailForm.php">Flights</a></h5></div>
+                <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="home.php">Home</a></h5></div>
+                <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="invoice.php">Invoice</a></h5></div> -->
+            </div>
             <!-- Listing of Flight Detai Cards -->
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <div class="row">
                     <div class="col-sm-12 d-flex justify-content-end p-2">
-                        <a href="flightDetailForm.php"><button type="button" class="btn btn-primary">Add Flight</button></a>
+                        <a href="flightDetailForm.php" class="btn btn-secondary mx-3">Insurance Detail</a>
                     </div>
                     <!-- Loop the below Card -->
                     <div class="col-sm-12">
@@ -106,7 +94,7 @@
                                 <p class="card-text">
                                     Arline detail........
                                 </p>
-                                <a href="insurancepage.php" class="btn btn-primary">Insurance Detail</a>
+                                <a href="insurancepage.php" class="btn btn-secondary">Insurance Detail</a>
                             </div>
                         </div>  
                         <!-- Card 2 -->
@@ -130,7 +118,7 @@
                                 <p class="card-text">
                                     Arline detail........
                                 </p>
-                                <a href="insurancepage.php" class="btn btn-primary">Insurance Detail</a>
+                                <a href="insurancepage.php" class="btn btn-secondary">Insurance Detail</a>
                             </div>
                         </div>  
                     </div>    
