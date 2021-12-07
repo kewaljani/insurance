@@ -115,7 +115,7 @@
                         <div class="col-12 text_white fw-bolder">
                             <h1>Flight Detail</h1>
                         </div>
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="form-outline">
                                 <label class="form-label text_white" for="airline_name">Select Airline</label>
                                 <!-- <input type="text" id="airline_name" name="airline_name" class="form-control" /> -->
@@ -142,8 +142,15 @@
                              </select>
                          </div>
                      </div>
+                     <div class="col-4">
+                        <div class="form-outline" style="margin-top:0px">
+                            <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+                            <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                            <input type="number" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+                        </div>
+                    </div>
 
-                     <div class="col-6">
+                    <!--  <div class="col-6">
                         <label class="form-label text_white" for="flight_id">Special Assistances</label>
 
                   </div>
@@ -151,46 +158,106 @@
                         <label class="form-label text_white" for="flight_id">Special Assistances</label>
 
                   </div>
-                  <div class="col-6">
-                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Default checkbox
-                          </label>
-                      </div>
-                  </div>
-                  <div class="col-6">
-                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Default checkbox
-                          </label>
-                      </div>
-                  </div>
-                <div class="col-6">
-                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Default checkbox
-                          </label>
-                      </div>
-                  </div>
-                  <div class="col-6">
-                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Default checkbox
-                          </label>
-                      </div>
-                  </div>
+              -->
+              <div class="col-6">
 
-                  <div class="col-12 d-flex justify-content-end">
-                    <!-- Submit button -->
-                    <button type="submit" class="btn-secondary mt-4 mb-4">Submit</button>
+                <div class="form-outline" style="margin-top:20px">
+                    <label class="form-label text_white" for="flight_type">Departure Airport</label>
+                    <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                    <input type="Text" id="from_place" name="from_place" class="form-control" />
                 </div>
             </div>
+            <div class="col-6">
+
+                <div class="form-outline" style="margin-top:20px">
+                    <label class="form-label text_white" for="flight_type">Arrival Airport</label>
+                    <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                    <input type="Text" id="from_place" name="from_place" class="form-control" />
+                </div>
+            </div>
+            <div class="col-6">
+
+                <div class="row">
+                    <div class="col-12 mt-4">
+                                   <!--  <div class="form-check">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          Default checkbox
+                                      </label>
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  </div>
+                              -->                               
+                              <label class="form-label text_white" for="flight_id">Special Assistances</label>
+
+                          </div>
+                          <div class="col-12 mt-2">
+                             <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Default checkbox
+                              </label>
+                          </div>
+                      </div>
+                      <div class="col-12 mt-2">
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Default checkbox
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Default checkbox
+                      </label>
+                  </div>
+              </div>
+              <div class="col-12 mt-2">
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Default checkbox
+                  </label>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="col-6 ">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-outline" style="margin-top:20px">
+                <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+                <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                <input type="number" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+            </div>
         </div>
-    </form>
+        <div class="col-12">
+           <div class="form-outline" style="margin-top:20px">
+            <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+            <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+            <input type="date" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+</div>
+
+
+<div class="col-12 d-flex justify-content-end">
+    <!-- Submit button -->
+    <button type="submit" class="btn-secondary mt-4 mb-4">Submit</button>
+</div>
+</div>
+</div>
+</form>
 </div>
 </div>
 <!-- Footer -->

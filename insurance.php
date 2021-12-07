@@ -493,7 +493,7 @@
 </div>
 <div class="col-12 d-flex justify-content-end">
     <!-- Submit button -->
-    <button type="submit" class="btn-secondary mt-4 mb-4" onclick='change();'>Submit</button>
+    <button type="submit" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
 </div>
 </div>
 </div>

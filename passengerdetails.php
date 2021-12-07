@@ -107,7 +107,7 @@
                         <h1>Passenger Detail</h1>
                     </div>
                     <?php
-                    for ($x = 1; $x <= 5; $x++) {
+                    for ($x = 1; $x <= 2; $x++) {
                     ?>
                      <label class="form-label text_white" for="flight_id"><?php echo "Passenger " . $x?> </label>
                     <div class="row">
@@ -127,7 +127,7 @@
                     <div class="row">
                     <div class="col-6">
                         <div class="form-outline">
-                            <label class="form-label text_white" for="flight_id"></label>
+                        <label class="form-label text_white" for="flight_id"></label>
                             <input type="number" id="flight_id" placeholder="Nationality" name="flight_id" class="form-control" />
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="col-3">
-                       <label class="form-label text_white" for="flight_id" style="margin: 30px 0 0 10px;"> passport Expiery date :</label>
+                       <label class="form-label text_white" for="flight_id" style="margin: 30px 0 0 10px;"> passport Expiry date :</label>
                     </div>
                     <div class="col-3">
                         <div class="form-outline">
