@@ -56,21 +56,29 @@
 </head>
 <body style="background-color:grey;">
     <!-- Header -->
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid d-flex justify-content-between w-100">
-                <div class="">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarColor02">
+    <div class="row">
+      <div class="col">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid ">
+              <div class="raw w-100 d-flex justify-content-between">
+                <div class="col">
+                  <a class="navbar-brand" href="#">Navbar</a>
+              </div>
+              <div class="col">
+                  <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="home.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="flightDetailForm.php">Flights</a>
-                        </li>
+                          <a class="nav-link" href="home.php">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="timeLine.php">TimeLine</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="flightDetailForm.php">Flights</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="invoice.php">Invoice</a>
+                      </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
                     </li>
@@ -78,22 +86,25 @@
                         <a class="nav-link" href="#">SignUp</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LogOut</a>
+                        <a class="nav-link" href="login.php">LogOut</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
+</nav>
+</div>
 </div>
 <!-- Body -->
 
 <div class="row g-3 pt-2 d-flex justify-content-center">
     <div class="col-8">
-        <form action="UploadFlightDetail.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
+        <form action="passengerdetails.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
             <div class="container">
                 <div class="row g-3">
                     <div class="col-12 text_white fw-bolder">
-                        <h1>Insurence Detail</h1>
+                        <h1>Passenger Detail</h1>
                     </div>
                     <div class="col-6">
                         <div class="form-outline">
@@ -115,11 +126,11 @@
 
 
 
-                    <div class="row " style="margin-left:0px;display:none;padding:0"  id='agent' name='agent'>
+                    <div class="row " style="margin-left:0;display:none;padding:0;"  id='agent' name='agent'>
                         <div class="row" style="padding:0;margin:0;width:100%">
                             <div class="col-6" class='agent'>
-                             <label class="form-label text_white" for="flight_id">Agent Name</label>
-                              <select class="form-control" id="flight_type" name="flight_type" >
+                               <label class="form-label text_white" for="flight_id">Agent Name</label>
+                               <select class="form-control" id="flight_type" name="flight_type" >
                                 <option  value="Option1">Kayak</option> 
                                 <option  value="Option2">Expedia</option> 
                                 <option  value="Option3">Priceline</option> 
@@ -128,17 +139,17 @@
                                 <option  value="Option6">CheapOair</option> 
                                 <option  value="Option7">Travelocity</option> 
                             </select>
-                         </div>
-                         <div class="col-6">
+                        </div>
+                        <div class="col-6">
                           <label class="form-label text_white" for="flight_id">Agent website</label>
                           <input type="text" id="flight_id" name="flight_id" class="form-control" />
                       </div>
                   </div>
-                  <div class="row" style="padding:10;">
+                  <div class="row" style="padding:0;margin:0;width:100%">
                     <div class="col-6">
 
-                     <label class="form-label text_white" for="flight_id"> Country code </label>  
-                     <select id="countryCode" class="form-control"  id="" >
+                       <label class="form-label text_white" for="flight_id"> Country code </label>  
+                       <select id="countryCode" class="form-control"  id="" >
                         <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
                         <option data-countryCode="US" value="1">USA (+1)</option>
                         <optgroup label="Other countries">
@@ -362,7 +373,7 @@
                 </div>
 
 
-                <div class="col-6" style="padding:0;">
+                <div class="col-6">
                   <label class="form-label text_white" for="flight_id">Agent Number</label>
                   <input class="form-control" type="text" id="mnumber" placeholder="Mobile no" style="width:100%">
               </div>
@@ -376,29 +387,29 @@
 
 
 
-      <div class="row p-1" style="margin-left:0px;display:none"  id='airline' name='airline'>
-        <div class='row'>
-        <div class="col-6" class='agent'>
-           <label class="form-label text_white" for="flight_id">Membership  type</label>
+      <div class="row " style="padding:0;margin:0;width:100%;display:none"  id='airline' name='airline'>
+        <div class='row' style="padding:0;margin:0;width:100%">
+            <div class="col-6" class='agent' >
+             <label class="form-label text_white" for="flight_id">Membership  type</label>
              <select class="form-control" id="flight_type" name="flight_type" >
-            <option  value="Option1">TrueBlue</option> 
-            <option  value="Option2">Rapid Rewards</option> 
-            <option  value="Option3">Mileage Plan</option> 
-            <option  value="Option4">SkyMiles</option> 
-            <option  value="Option5">AAdvantage</option> 
-            <option  value="Option6">MileagePlus</option> 
-            <option  value="Option7">HawaiianMiles</option> 
-            <option  value="Option8">British Airways Executive Club</option> 
-            <option  value="Option9">AirFrance & KLM Flying Blue</option> 
-            <option  value="Option10">Virgin Atlantic Flying Club</option>
-            <option  value="Option8">Emirates Skywards Blue</option> 
-            <option  value="Option9">Emirates Skywards Silver</option> 
-            <option  value="Option10">Emirates Skywards Gold</option>
-            <option  value="Option10">Emirates Skywards Platinum</option>
-        </select>
-       </div>
+                <option  value="Option1">TrueBlue</option> 
+                <option  value="Option2">Rapid Rewards</option> 
+                <option  value="Option3">Mileage Plan</option> 
+                <option  value="Option4">SkyMiles</option> 
+                <option  value="Option5">AAdvantage</option> 
+                <option  value="Option6">MileagePlus</option> 
+                <option  value="Option7">HawaiianMiles</option> 
+                <option  value="Option8">British Airways Executive Club</option> 
+                <option  value="Option9">AirFrance & KLM Flying Blue</option> 
+                <option  value="Option10">Virgin Atlantic Flying Club</option>
+                <option  value="Option8">Emirates Skywards Blue</option> 
+                <option  value="Option9">Emirates Skywards Silver</option> 
+                <option  value="Option10">Emirates Skywards Gold</option>
+                <option  value="Option10">Emirates Skywards Platinum</option>
+            </select>
+        </div>
 
-       <div class="col-6" style="widh:100%">
+        <div class="col-6" style="widh:100%">
           <label class="form-label text_white" for="flight_id">Airline member of</label>
           <select class="form-control" id="flight_type" name="flight_type" >
             <option  value="Option1">American Airlines</option> 
@@ -421,71 +432,68 @@
             <option  value="Option18">Jet Airways</option> 
             <option  value="Option19">Singapore Airlines</option> 
         </select>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-6" class='agent'>
-       <label class="form-label text_white" for="flight_id">Start Date of membership</label>
-       <input type="date" id="flight_id" name="flight_id" class="form-control" />
-   </div>
-   <div class="col-6">
-      <label class="form-label text_white" for="flight_id">End Date of membership</label>
-      <input type="date" id="flight_id" name="flight_id" class="form-control" />
-  </div>
+    </div>
+</div>
+<div class="row"  style="padding:0;margin:0;width:100%">
+  <div class="col-6" class='agent'>
+     <label class="form-label text_white" for="flight_id">Start Date of membership</label>
+     <input type="date" id="flight_id" name="flight_id" class="form-control" />
+ </div>
+ <div class="col-6">
+  <label class="form-label text_white" for="flight_id">End Date of membership</label>
+  <input type="date" id="flight_id" name="flight_id" class="form-control" />
+</div>
 </div>
 </div> 
 <div class="col-6">
     <div class="form-outline">
-        <label class="form-label text_white" for="flight_type">Flight Type</label>
+        <label class="form-label text_white" for="flight_type">Emergency Contact First Name</label>
         <!-- <input type="text" id="flight_type" name="flight_type" class="form-control" /> -->
-        <select class="form-control" id="flight_type" name="flight_type" >
-            <option  value="Option1">Option1</option> 
-            <option  value="Option2">Option2</option> 
-            <option  value="Option3">Option3</option> 
-            <option  value="Option4">Option4</option> 
-            <option  value="Option5">Option5</option> 
-        </select>
-    </div>
-</div>
-<div class="col-6">
-    <div class="form-outline">
-        <label class="form-label text_white" for="class_type">Travel Class</label>
-        <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-        <select class="form-control" id="class_type" name="class_type" >
-            <option value="eco">Economy</option>
-            <option value="preeco">Premium Economy</option>
-            <option value="bclass">Business Class</option>
-            <option value="fclass">First Class</option>
-        </select>
-    </div>
-</div>
-<div class="col-6">
-    <div class="form-outline">
-        <label class="form-label text_white" for="from_place">Departure</label>
         <input type="text" id="from_place" name="from_place" class="form-control" />
     </div>
 </div>
 <div class="col-6">
-    <div class="form-outline text_white">
-        <label class="form-label" for="to_place">Destination</label>
-        <input type="text" id="to_place" name="to_place" class="form-control" />
+    <div class="form-outline">
+        <label class="form-label text_white" for="flight_type">Emergency Contact Last Name</label>
+        <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+        <input type="text" id="from_place" name="from_place" class="form-control" />
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-outline">
+        <label class="form-label text_white" for="from_place">country code (only number do not include 
+        +)</label>
+        <input type="number" id="from_place" name="from_place" class="form-control" />
     </div>
 </div>
 <div class="col-6">
     <div class="form-outline text_white">
-        <label class="form-label" for="d_date">Departure Date</label>
-        <input type="Date" id="d_date" name="d_date" class="form-control" />
+        <label class="form-label" for="to_place">Emergency Contact number</label>
+        <input type="number" id="from_place" name="from_place" class="form-control" />
     </div>
 </div>
 <div class="col-6">
     <div class="form-outline text_white">
-        <label class="form-label" for="no_of_seats">Seats</label>
+        <label class="form-label" for="d_date">Insurance Type</label>
+        <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
+            <option  value="direct" selected>Trip Cancellation</option>
+            <option  value="airline">Trip Interruption </option> 
+            <option  value="agent" >Medical Insurance</option> 
+            <option  value="agent" >Baggage Insurance </option> 
+            <option  value="agent" >Accidental Death Insurance</option> 
+            <option  value="agent" >All-inclusive Insurance</option> 
+        </select>
+    </div>
+</div>
+<div class="col-6">
+    <div class="form-outline text_white">
+        <label class="form-label" for="no_of_seats">Payment Type</label>
         <input type="text" id="no_of_seats" name="no_of_seats" class="form-control" />
     </div>
 </div>
 <div class="col-12 d-flex justify-content-end">
     <!-- Submit button -->
-    <button type="submit" class="btn-secondary mt-4 mb-4">Submit</button>
+    <button type="submit" class="btn-secondary mt-4 mb-4" onclick='change();'>Submit</button>
 </div>
 </div>
 </div>
