@@ -30,6 +30,44 @@
                 document.getElementById('agent').style.display="none";
             }
         }
+        function change(){
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var ccode = document.getElementById('cnumber').value;
+            var contact = document.getElementById('contact').value;
+            var peopleno = document.getElementById('peopleno').value;
+            var data = document.getElementById('member_type').value;
+            alert(fname)
+            alert(lname)
+            alert(ccode)
+            alert(contact)
+            alert(peopleno)
+            alert(data)
+            if (data==='airline')
+            {
+
+            }
+             if(data==='agent')
+            {
+
+            }
+            if(data==='direct')
+            {
+                if (xhttp.readyState == 4 && xhttp.status == 200)
+        { // Check the status - if everything goes fine
+        var x = xhttp.response
+        alert(x)
+            window.location.href="passengerdetails.php"// display the content (response) from the serverside page
+        }
+        }
+                xhttp.open("POST", "insurancecheck.php", true); // this is the url
+             parameters = "fname= "+fname+"&lname="+lname+"&ccode="+ccode+"&contact="+contact+"&peopleno="+peopleno+"&data="+'d';
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(parameters);
+        }
+            }
+
+        }
     </script>
     <style>
         label{
@@ -109,14 +147,14 @@
                     <div class="col-6">
                         <div class="form-outline">
                             <label class="form-label text_white" for="flight_id">No of passengers</label>
-                            <input type="text" id="flight_id" name="flight_id" class="form-control" />
+                            <input type="text" id="peopleno" name="peopleno" class="form-control" />
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-outline">
                             <label class="form-label text_white" for="airline_name">Select Type of booking</label>
                             <!-- <input type="text" id="airline_name" name="airline_name" class="form-control" /> -->
-                            <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
+                            <select class="form-control" id="member_type" name="member_type"  onchange="viewdisplay();" >
                                 <option  value="direct" selected>Direct</option>
                                 <option  value="airline">Member of Airline</option> 
                                 <option  value="agent" >Agent</option> 
@@ -130,7 +168,7 @@
                         <div class="row" style="padding:0;margin:0;width:100%">
                             <div class="col-6" class='agent'>
                                <label class="form-label text_white" for="flight_id">Agent Name</label>
-                               <select class="form-control" id="flight_type" name="flight_type" >
+                               <select class="form-control" id="agent_name" name="flight_type" >
                                 <option  value="Option1">Kayak</option> 
                                 <option  value="Option2">Expedia</option> 
                                 <option  value="Option3">Priceline</option> 
@@ -449,30 +487,30 @@
     <div class="form-outline">
         <label class="form-label text_white" for="flight_type">Emergency Contact First Name</label>
         <!-- <input type="text" id="flight_type" name="flight_type" class="form-control" /> -->
-        <input type="text" id="from_place" name="from_place" class="form-control" />
+        <input type="text" id="fname" name="fname" class="form-control" />
     </div>
 </div>
 <div class="col-6">
     <div class="form-outline">
         <label class="form-label text_white" for="flight_type">Emergency Contact Last Name</label>
         <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-        <input type="text" id="from_place" name="from_place" class="form-control" />
+        <input type="text" id="lname" name="lname" class="form-control" />
     </div>
 </div>
 <div class="col-6">
     <div class="form-outline">
         <label class="form-label text_white" for="from_place">country code (only number do not include 
         +)</label>
-        <input type="number" id="from_place" name="from_place" class="form-control" />
+        <input type="number" id="cnumber" name="cnumber" class="form-control" />
     </div>
 </div>
 <div class="col-6">
     <div class="form-outline text_white">
         <label class="form-label" for="to_place">Emergency Contact number</label>
-        <input type="number" id="from_place" name="from_place" class="form-control" />
+        <input type="number" id="contact" name="contact" class="form-control" />
     </div>
 </div>
-<div class="col-6">
+<!-- <div class="col-6">
     <div class="form-outline text_white">
         <label class="form-label" for="d_date">Insurance Type</label>
         <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
@@ -490,10 +528,10 @@
         <label class="form-label" for="no_of_seats">Payment Type</label>
         <input type="text" id="no_of_seats" name="no_of_seats" class="form-control" />
     </div>
-</div>
+</div> -->
 <div class="col-12 d-flex justify-content-end">
     <!-- Submit button -->
-    <button type="submit" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
+    <button type="button" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
 </div>
 </div>
 </div>

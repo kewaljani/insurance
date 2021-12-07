@@ -16,7 +16,7 @@ if (!empty($ennum) || !empty($pass))
       }
 	  else
 	  {
-		  $q="SELECT * FROM `kjana_psngr` where `email`='".$ennum."' and `password`='".$pswrd."';";
+		  $q="SELECT * FROM `kjana_psngr` where `email`=' ".$ennum."' and `password`='".$pswrd."';";
 		  $sq=mysqli_query($conn,$q);
 		  echo $q;
 	  }
