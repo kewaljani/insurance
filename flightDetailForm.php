@@ -65,29 +65,29 @@
 </head>
 <body style="background-color:grey;">
     <!-- Header -->
-    <div class="row">
-      <div class="col">
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid ">
-            <div class="raw w-100 d-flex justify-content-between">
-                <div class="col">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                </div>
-                <div class="col">
-                    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="timeLine.php">TimeLine</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="flightDetailForm.php">Flights</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="invoice.php">Invoice</a>
-                            </li>
+	<div class="row">
+		<div class="col">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <div class="raw w-100 d-flex justify-content-between">
+                        <div class="col">
+                            <a class="navbar-brand" href="#">LOGO</a>
+                        </div>
+                        <div class="col">
+                            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="home.php">TimeLine</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="flightDetailForm.php">Flights</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="insurance.php">Insurance</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="invoice.php">Invoice</a>
+                                    </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link" href="#">Login</a>
                                     </li>
@@ -95,7 +95,7 @@
                                         <a class="nav-link" href="#">SignUp</a>
                                     </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">LogOut</a>
+                                        <a class="nav-link" href="login.php">LogOut</a>
                                     </li>
                                 </ul>
                             </div>
@@ -104,10 +104,10 @@
                 </div>
             </nav>
         </div>
-    </div>
+	</div>
     <!-- Body -->
 
-    <div class="row g-3 d-flex justify-content-center">
+    <div class="row g-3 d-flex justify-content-center body_section">
         <div class="col-8">
             <form action="UploadFlightDetail.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
                 <div class="container">
