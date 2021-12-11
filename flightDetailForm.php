@@ -39,6 +39,18 @@
         }
     })
   }); 
+  function change()
+  {
+    
+    var airline_name = document.getElementById('airline_name').value;
+    var departure_AC = document.getElementById('departure_AC').value;
+    var departure_time = document.getElementById('departure_time').value;
+    var arrival_ac = document.getElementById('arrival_ac').value;
+    var arrival_time = document.getElementById('arrival_time').value;
+    var meal_plan = document.getElementById('meal_plan').value;
+    var Cabin_Class = document.getElementById('Cabin_Class').value;
+  
+  }
 </script>
 <style>
     label{
@@ -120,25 +132,25 @@
                                 <label class="form-label text_white" for="airline_name">Select Airline</label>
                                 <!-- <input type="text" id="airline_name" name="airline_name" class="form-control" /> -->
                                 <select class="form-control" id="airline_name" name="airline_name" >
-                                 <option  value="Option1">American Airlines</option> 
-                                 <option  value="Option2">JetBlue Airways</option> 
-                                 <option  value="Option3">US Airways</option> 
-                                 <option  value="Option4">Delta Air Lines</option> 
-                                 <option  value="Option5">United Airlines</option> 
-                                 <option  value="Option6">Emirates</option> 
-                                 <option  value="Option7">Qatar Airways</option> 
-                                 <option  value="Option8">Air China</option> 
-                                 <option  value="Option9">Cathay Pacific</option> 
-                                 <option  value="Option10">China Airlines</option> 
-                                 <option  value="Option11">China Southern Airlines</option> 
-                                 <option  value="Option12">British Airways</option> 
-                                 <option  value="Option13">Lufthansa</option> 
-                                 <option  value="Option14">Swiss</option> 
-                                 <option  value="Option15">Korean Air</option> 
-                                 <option  value="Option16">Air Canada</option> 
-                                 <option  value="Option17">Air India</option> 
-                                 <option  value="Option18">Jet Airways</option> 
-                                 <option  value="Option19">Singapore Airlines</option> 
+                                 <option  value="American Airlines">American Airlines</option> 
+                                 <option  value="etBlue Airways">JetBlue Airways</option> 
+                                 <option  value="US Airways">US Airways</option> 
+                                 <option  value="elta Air Lines">Delta Air Lines</option> 
+                                 <option  value="United Airlines">United Airlines</option> 
+                                 <option  value="Emirates">Emirates</option> 
+                                 <option  value="Qatar Airways">Qatar Airways</option> 
+                                 <option  value="Air China">Air China</option> 
+                                 <option  value="Cathay Pacific">Cathay Pacific</option> 
+                                 <option  value="China Airlines">China Airlines</option> 
+                                 <option  value="China Southern Airlines">China Southern Airlines</option> 
+                                 <option  value="British Airways">British Airways</option> 
+                                 <option  value="Lufthansa">Lufthansa</option> 
+                                 <option  value="Swiss">Swiss</option> 
+                                 <option  value="Korean Air">Korean Air</option> 
+                                 <option  value="Air Canada">Air Canada</option> 
+                                 <option  value="Air India">Air India</option> 
+                                 <option  value="Jet Airways">Jet Airways</option> 
+                                 <option  value="Singapore Airlines<">Singapore Airlines</option> 
                              </select>
                          </div>
                      </div>
@@ -165,21 +177,21 @@
                 <div class="form-outline" style="margin-top:20px">
                     <label class="form-label text_white" for="flight_type">Departure Airport Code</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                    <input type="Text" id="from_place" name="from_place" class="form-control" />
+                    <input type="Text" id="departure_AC" name="from_place" class="form-control" />
                 </div>
             </div> <div class="col-3">
 
                 <div class="form-outline" style="margin-top:20px">
                     <label class="form-label text_white" for="flight_type">Departure Time</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                    <input type="Date" id="from_place" name="from_place" class="form-control" />
+                    <input type="Date" id="departure_time" name="from_place" class="form-control" />
                 </div>
             </div> <div class="col-3">
 
                 <div class="form-outline" style="margin-top:20px">
                     <label class="form-label text_white" for="flight_type">Arrival Airport Code</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                    <input type="Text" id="from_place" name="from_place" class="form-control" />
+                    <input type="Text" id="arrival_ac" name="from_place" class="form-control" />
                 </div>
             </div>
             <div class="col-3">
@@ -187,7 +199,7 @@
                 <div class="form-outline" style="margin-top:20px">
                     <label class="form-label text_white" for="flight_type">Arrival Time</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                    <input type="date" id="from_place" name="from_place" class="form-control" />
+                    <input type="date" id="arrival_time" name="from_place" class="form-control" />
                 </div>
             </div>
           </div>
@@ -252,19 +264,19 @@
                 <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
                 <div class="form-outline">
                                 <label class="form-label text_white" for="airline_name">Meal Plan</label>
-                                   <select class="form-control" id="" name="airline_name" >
-                                 <option  value="Option1">Indian Vegetarian Meal (AVML)</option> 
-                                 <option  value="Option2">Non-vegetarian Hindu Meal (HNML)</option> 
-                                 <option  value="Option2">Vegetarian Jain Meal (VJML)</option> 
-                                 <option  value="Option2">Kosher Meal (KSML)</option> 
-                                 <option  value="Option2">Bland Meal (BLML)</option> 
-                                 <option  value="Option2">Diabetic Meal (DBML)</option> 
-                                 <option  value="Option2">Gluten‑Friendly Meal (GFML)</option> 
-                                 <option  value="Option2">Low‑Fat Meal (LFML)</option> 
-                                 <option  value="Option2">Low‑Salt Meal (LSML)</option> 
-                                 <option  value="Option2">Vegan Meal (VGML)</option> 
-                                 <option  value="Option2">Child Meal (CHML)</option> 
-                                 <option  value="Option2">Baby Meal (BBML)</option> 
+                                   <select class="form-control" id="meal_plan" name="airline_name" >
+                                 <option  value="AVML">Indian Vegetarian Meal (AVML)</option> 
+                                 <option  value="HNML">Non-vegetarian Hindu Meal (HNML)</option> 
+                                 <option  value="VJML">Vegetarian Jain Meal (VJML)</option> 
+                                 <option  value="KSML">Kosher Meal (KSML)</option> 
+                                 <option  value="BLML">Bland Meal (BLML)</option> 
+                                 <option  value="DBML">Diabetic Meal (DBML)</option> 
+                                 <option  value="GFML">Gluten‑Friendly Meal (GFML)</option> 
+                                 <option  value="LFML">Low‑Fat Meal (LFML)</option> 
+                                 <option  value="LSML">Low‑Salt Meal (LSML)</option> 
+                                 <option  value="VGML">Vegan Meal (VGML)</option> 
+                                 <option  value="CHML">Child Meal (CHML)</option> 
+                                 <option  value="BBML">Baby Meal (BBML)</option> 
                                </select>
                   </div>
             </div>
@@ -275,11 +287,11 @@
             <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
             <!-- <input type="date" id="from_place" name="from_place" class="form-control" onchange='numbers();'/> -->
              <label class="form-label text_white" for="airline_name">Cabin Class</label>
-                                   <select class="form-control" id="" name="airline_name" >
-                                 <option  value="Option1"> Economy Class</option> 
-                                 <option  value="Option2">Economy Plus Class</option> 
-                                 <option  value="Option2">Business Class</option> 
-                                 <option  value="Option2">First Class</option> 
+                                   <select class="form-control" id="Cabin_Class" name="airline_name" >
+                                 <option  value="Economy Class"> Economy Class</option> 
+                                 <option  value="Economy Plus Class">Economy Plus Class</option> 
+                                 <option  value="Business Class">Business Class</option> 
+                                 <option  value="First Class">First Class</option> 
                                </select>
                                 
         </div>
