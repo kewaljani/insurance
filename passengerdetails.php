@@ -61,6 +61,7 @@ session_start();
             //  window.location.href="login.php"
             // } 
             // window.location.href="login.php"// display the content (response) from the serverside page
+            window.location.href="flightDetailForm.php"
             }
         }
 

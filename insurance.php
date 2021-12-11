@@ -62,6 +62,10 @@
                 var Airline_member = document.getElementById('Airline_member').value;
                 var membership_start = document.getElementById('membership_start').value;
                 var membership_end = document.getElementById('membership_end').value;
+                alert(membership);
+                alert(Airline_member);
+                alert(membership_start);
+                alert(membership_end);
             }
              if(data==='agent')
             {
@@ -74,7 +78,7 @@
             }
             if(data==='direct')
             {   
-                var xhttp;
+        var xhttp;
        //alert(first,pswrd,last,email,enrollment,cpswr);
         xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
         xhttp.onreadystatechange = function()
@@ -87,7 +91,7 @@
         }
             else{
                 alert("You cannot enter your own mobile number for Emergency contacts");
-                window.location.href="insurance.php"
+                window.location.href="insurance.php";
             }
         }
         }
