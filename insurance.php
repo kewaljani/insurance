@@ -18,6 +18,9 @@
             {
                 document.getElementById('airline').style.display="block";
                 document.getElementById('agent').style.display="none";
+
+                
+
             }
             if(data==='agent')
             {
@@ -48,13 +51,23 @@
             // alert(contact)
             // alert(peopleno)
             // alert(data)
+            var insurance_type= document.getElementById('insurance_type').value;
+
             if (data==='airline')
             {
-                
+                var membership = document.getElementById('membership').value;
+                var Airline_member = document.getElementById('Airline_member').value;
+                var membership_start = document.getElementById('membership_start').value;
+                var membership_end = document.getElementById('membership_end').value;
             }
              if(data==='agent')
             {
                 
+                var agent_name = document.getElementById('agent_name').value;
+                var agent_website = document.getElementById('agent_website').value;
+                var agent_number = document.getElementById('agent_number').value;
+                var countryCode = document.getElementById('countryCode').value;
+            
             }
             if(data==='direct')
             {   
@@ -193,7 +206,7 @@
                         </div>
                         <div class="col-6">
                           <label class="form-label text_white" for="flight_id">Agent website</label>
-                          <input type="text" id="flight_id" name="flight_id" class="form-control" />
+                          <input type="text" id="agent_website" name="flight_id" class="form-control" />
                       </div>
                   </div>
                   <div class="row" style="padding:0;margin:0;width:100%">
@@ -426,7 +439,7 @@
 
                 <div class="col-6">
                   <label class="form-label text_white" for="flight_id">Agent Number</label>
-                  <input class="form-control" type="text" id="mnumber" placeholder="Mobile no" style="width:100%">
+                  <input class="form-control" type="text" id="agent_number" placeholder="Mobile no" style="width:100%">
               </div>
           </div>
       </div> 
@@ -434,7 +447,7 @@
         <div class='row' style="padding:0;margin:0;width:100%">
             <div class="col-6" class='agent' >
              <label class="form-label text_white" for="flight_id">Membership  type</label>
-             <select class="form-control" id="flight_type" name="flight_type" >
+             <select class="form-control" id="membership" name="flight_type" >
                 <option  value="TrueBlue">TrueBlue</option> 
                 <option  value="Rapid Rewards">Rapid Rewards</option> 
                 <option  value="Mileage Plan">Mileage Plan</option> 
@@ -454,7 +467,7 @@
 
         <div class="col-6" style="widh:100%">
           <label class="form-label text_white" for="flight_id">Airline member of</label>
-          <select class="form-control" id="flight_type" name="flight_type" >
+          <select class="form-control" id="Airline_member" name="flight_type" >
             <option  value="American Airlines">American Airlines</option> 
             <option  value="JetBlue Airways">JetBlue Airways</option> 
             <option  value="US Airways">US Airways</option> 
@@ -480,11 +493,11 @@
 <div class="row"  style="padding:0;margin:0;width:100%">
   <div class="col-6" class='agent'>
      <label class="form-label text_white" for="flight_id">Start Date of membership</label>
-     <input type="date" id="flight_id" name="flight_id" class="form-control" />
+     <input type="date" id="membership_start" name="flight_id" class="form-control" />
  </div>
  <div class="col-6">
   <label class="form-label text_white" for="flight_id">End Date of membership</label>
-  <input type="date" id="flight_id" name="flight_id" class="form-control" />
+  <input type="date" id="membership_end" name="flight_id" class="form-control" />
 </div>
 </div>
 </div> 
@@ -517,7 +530,7 @@
 </div>
 <div class="col-12">
             <label class="form-label" for="d_date">Insurance Type (200$)</label>
-          <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
+          <select class="form-control" id="insurance_type" name="airline_name"  onchange="viewdisplay();" >
             <option  value="Trip Cancellation" selected>Trip Cancellation</option>
             <option  value="Trip Interruption">Trip Interruption </option> 
             <option  value="Medical Insurance" >Medical Insurance</option> 
