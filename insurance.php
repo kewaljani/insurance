@@ -16,7 +16,9 @@
             var data = document.getElementById('member_type').value;
             if (data==='airline')
             {
-                document.getElementById('airline').style.display="block";
+                 
+
+                 document.getElementById('airline').style.display="block";
                 document.getElementById('agent').style.display="none";
             }
             if(data==='agent')
@@ -33,6 +35,7 @@
         function change(){
             const d = new Date();
             var pno;
+        
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var ccode = document.getElementById('cnumber').value;
@@ -434,7 +437,7 @@
         <div class='row' style="padding:0;margin:0;width:100%">
             <div class="col-6" class='agent' >
              <label class="form-label text_white" for="flight_id">Membership  type</label>
-             <select class="form-control" id="flight_type" name="flight_type" >
+             <select class="form-control" id="membershipt" name="flight_type" >
                 <option  value="TrueBlue">TrueBlue</option> 
                 <option  value="Option2">Rapid Rewards</option> 
                 <option  value="Option3">Mileage Plan</option> 
@@ -517,7 +520,7 @@
 </div>
 <div class="col-12">
             <label class="form-label" for="d_date">Insurance Type (200$)</label>
-          <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
+          <select class="form-control" id="insurance_type" name="insurance_type"  onchange="viewdisplay();" >
             <option  value="direct" selected>Trip Cancellation</option>
             <option  value="airline">Trip Interruption </option> 
             <option  value="agent" >Medical Insurance</option> 

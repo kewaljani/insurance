@@ -29,7 +29,7 @@ session_start();
     var ccode = document.getElementById('ccode').value;
     var mnumber = document.getElementById('mnumber').value;
     // var pswrd=document.getElementById('pswrd').value;
-    //       var cpswrd=document.getElementById('cpswrd').value;
+    // var cpswrd=document.getElementById('cpswrd').value;
     var straddr=document.getElementById('straddr').value;
     var city = document.getElementById('city').value;
     var state=document.getElementById('state').value;
@@ -50,7 +50,25 @@ session_start();
     alert(country)
     alert(zipcode)
         window.location.href="flightDetailForm.php"
+        xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+        xhttp.onreadystatechange = function()
+        {
+        if (xhttp.readyState == 4 && xhttp.status == 200)
+            { // Check the status - if everything goes fine
+            alert(xhttp.response)
+            // if (output === 'User Already exist please login')
+            // {
+            //  window.location.href="login.php"
+            // } 
+            // window.location.href="login.php"// display the content (response) from the serverside page
+            }
         }
+
+        xhttp.open("POST", "db2.php", true); // this is the url
+        parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last;
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(parameters);
+       }
     </script>
     <style>
         label{
