@@ -109,7 +109,7 @@
 
     <div class="row g-3 d-flex justify-content-center body_section">
         <div class="col-8">
-            <form action="UploadFlightDetail.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
+            <form action="invoice.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
                 <div class="container">
                     <div class="row g-3">
                         <div class="col-12 text_white fw-bolder">
@@ -144,9 +144,9 @@
                      </div>
                      <div class="col-4">
                         <div class="form-outline" style="margin-top:0px">
-                            <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+                            <label class="form-label text_white" for="flight_type">No of Flights </label>
                             <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                            <input type="number" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+                            <input type="Number" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
                         </div>
                     </div>
 
@@ -159,22 +159,38 @@
 
                   </div>
               -->
-              <div class="col-6">
+              <div class="row pl-3" >
+              <div class="col-3">
 
                 <div class="form-outline" style="margin-top:20px">
-                    <label class="form-label text_white" for="flight_type">Departure Airport</label>
+                    <label class="form-label text_white" for="flight_type">Departure Airport Code</label>
+                    <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                    <input type="Text" id="from_place" name="from_place" class="form-control" />
+                </div>
+            </div> <div class="col-3">
+
+                <div class="form-outline" style="margin-top:20px">
+                    <label class="form-label text_white" for="flight_type">Departure Time</label>
+                    <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
+                    <input type="Date" id="from_place" name="from_place" class="form-control" />
+                </div>
+            </div> <div class="col-3">
+
+                <div class="form-outline" style="margin-top:20px">
+                    <label class="form-label text_white" for="flight_type">Arrival Airport Code</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
                     <input type="Text" id="from_place" name="from_place" class="form-control" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-3">
 
                 <div class="form-outline" style="margin-top:20px">
-                    <label class="form-label text_white" for="flight_type">Arrival Airport</label>
+                    <label class="form-label text_white" for="flight_type">Arrival Time</label>
                     <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                    <input type="Text" id="from_place" name="from_place" class="form-control" />
+                    <input type="date" id="from_place" name="from_place" class="form-control" />
                 </div>
             </div>
+          </div>
             <div class="col-6">
 
                 <div class="row">
@@ -197,7 +213,7 @@
                              <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Default checkbox
+                                 Disability and Mobility Assistance
                               </label>
                           </div>
                       </div>
@@ -205,7 +221,7 @@
                          <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
-                              Default checkbox
+                              Travelling with infants
                           </label>
                       </div>
                   </div>
@@ -213,7 +229,7 @@
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          Default checkbox
+                        Travelling with animals
                       </label>
                   </div>
               </div>
@@ -221,29 +237,55 @@
                  <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                      Default checkbox
+                      Elderly passenger
                   </label>
               </div>
           </div>
       </div>
-
   </div>
 
   <div class="col-6 ">
     <div class="row">
         <div class="col-12">
             <div class="form-outline" style="margin-top:20px">
-                <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+                <!-- <label class="form-label text_white" for="flight_type">Number of Stops in between</label> -->
                 <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-                <input type="number" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+                <div class="form-outline">
+                                <label class="form-label text_white" for="airline_name">Meal Plan</label>
+                                   <select class="form-control" id="" name="airline_name" >
+                                 <option  value="Option1">Indian Vegetarian Meal (AVML)</option> 
+                                 <option  value="Option2">Non-vegetarian Hindu Meal (HNML)</option> 
+                                 <option  value="Option2">Vegetarian Jain Meal (VJML)</option> 
+                                 <option  value="Option2">Kosher Meal (KSML)</option> 
+                                 <option  value="Option2">Bland Meal (BLML)</option> 
+                                 <option  value="Option2">Diabetic Meal (DBML)</option> 
+                                 <option  value="Option2">Gluten‑Friendly Meal (GFML)</option> 
+                                 <option  value="Option2">Low‑Fat Meal (LFML)</option> 
+                                 <option  value="Option2">Low‑Salt Meal (LSML)</option> 
+                                 <option  value="Option2">Vegan Meal (VGML)</option> 
+                                 <option  value="Option2">Child Meal (CHML)</option> 
+                                 <option  value="Option2">Baby Meal (BBML)</option> 
+                               </select>
+                  </div>
             </div>
         </div>
         <div class="col-12">
            <div class="form-outline" style="margin-top:20px">
-            <label class="form-label text_white" for="flight_type">Number of Stops in between</label>
+            <!-- <label class="form-label text_white" for="flight_type">Number of Stops in between</label> -->
             <!-- <input type="text" id="class_type" name="class_type" class="form-control" /> -->
-            <input type="date" id="from_place" name="from_place" class="form-control" onchange='numbers();'/>
+            <!-- <input type="date" id="from_place" name="from_place" class="form-control" onchange='numbers();'/> -->
+             <label class="form-label text_white" for="airline_name">Cabin Class</label>
+                                   <select class="form-control" id="" name="airline_name" >
+                                 <option  value="Option1"> Economy Class</option> 
+                                 <option  value="Option2">Economy Plus Class</option> 
+                                 <option  value="Option2">Business Class</option> 
+                                 <option  value="Option2">First Class</option> 
+                               </select>
+                                
         </div>
+       
+
+
     </div>
 </div>
 </div>

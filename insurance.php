@@ -31,44 +31,60 @@
             }
         }
         function change(){
+            const d = new Date();
+            var pno;
             var fname = document.getElementById('fname').value;
             var lname = document.getElementById('lname').value;
             var ccode = document.getElementById('cnumber').value;
             var contact = document.getElementById('contact').value;
             var peopleno = document.getElementById('peopleno').value;
+            d.setTime(d.getTime() + (1*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = "total"+ "=" + peopleno + ";" + expires ; 
             var data = document.getElementById('member_type').value;
-            alert(fname)
-            alert(lname)
-            alert(ccode)
-            alert(contact)
-            alert(peopleno)
-            alert(data)
+            // alert(document.cookie)
+            // alert(lname)
+            // alert(ccode)
+            // alert(contact)
+            // alert(peopleno)
+            // alert(data)
             if (data==='airline')
             {
-
+                
             }
              if(data==='agent')
             {
-
+                
             }
             if(data==='direct')
-            {
-                if (xhttp.readyState == 4 && xhttp.status == 200)
+            {   
+                var xhttp;
+       //alert(first,pswrd,last,email,enrollment,cpswr);
+        xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+        xhttp.onreadystatechange = function()
+        {
+        if (xhttp.readyState == 4 && xhttp.status == 200)
         { // Check the status - if everything goes fine
-        var x = xhttp.response
-        alert(x)
+        var x =xhttp.response
+        if (x ==="inserted"){
             window.location.href="passengerdetails.php"// display the content (response) from the serverside page
         }
+            else{
+                alert("You cannot enter your own mobile number for Emergency contacts");
+                window.location.href="insurance.php"
+            }
         }
-                xhttp.open("POST", "insurancecheck.php", true); // this is the url
-             parameters = "fname= "+fname+"&lname="+lname+"&ccode="+ccode+"&contact="+contact+"&peopleno="+peopleno+"&data="+'d';
+        }
+        }
+
+         xhttp.open("POST", "insurancecheck.php", true); // this is the url
+        parameters = "fname= "+fname+"&lname="+lname+"&ccode="+ccode+"&contact="+contact+"&peopleno="+peopleno+"&data="+'d';
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(parameters);
-        }
-            }
-
-        }
+             }
+         
     </script>
+                <!-- xhttp.open("POST", "insurancecheck.php", true); // this is the url -->
     <style>
         label{
           color:white
@@ -142,7 +158,7 @@
             <div class="container">
                 <div class="row g-3">
                     <div class="col-12 text_white fw-bolder">
-                        <h1>Passenger Detail</h1>
+                        <h1>Customer Detail</h1>
                     </div>
                     <div class="col-6">
                         <div class="form-outline">
@@ -419,7 +435,7 @@
             <div class="col-6" class='agent' >
              <label class="form-label text_white" for="flight_id">Membership  type</label>
              <select class="form-control" id="flight_type" name="flight_type" >
-                <option  value="Option1">TrueBlue</option> 
+                <option  value="TrueBlue">TrueBlue</option> 
                 <option  value="Option2">Rapid Rewards</option> 
                 <option  value="Option3">Mileage Plan</option> 
                 <option  value="Option4">SkyMiles</option> 
@@ -499,6 +515,17 @@
         <input type="number" id="contact" name="contact" class="form-control" />
     </div>
 </div>
+<div class="col-12">
+            <label class="form-label" for="d_date">Insurance Type (200$)</label>
+          <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
+            <option  value="direct" selected>Trip Cancellation</option>
+            <option  value="airline">Trip Interruption </option> 
+            <option  value="agent" >Medical Insurance</option> 
+            <option  value="agent" >Baggage Insurance </option> 
+            <option  value="agent" >Accidental Death Insurance</option> 
+            <option  value="agent" >All-inclusive Insurance</option> 
+        </select>
+    </div>
 <!-- <div class="col-6">
     <div class="form-outline text_white">
         <label class="form-label" for="d_date">Insurance Type</label>

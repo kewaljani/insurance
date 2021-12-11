@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +18,9 @@
 
 <body style="background-color:grey">
     <!-- Header -->
+    <?php 
+        print_r($_SESSION['pid']);
+    ?>
 	<div class="row">
 		<div class="col">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">

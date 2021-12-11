@@ -1,4 +1,6 @@
 <?php
+session_start();
+
   $pswrd = $cpass = "";
   $firstname = $_REQUEST["first"];
   $lastname = $_REQUEST["last"];
@@ -17,7 +19,7 @@
   $state = $_REQUEST['state'];
   $country = $_REQUEST['country'];
   $zipcode = $_REQUEST['zipcode'];
-  echo $email." ".$firstname." ".$lastname." ".$pswrd." ".$cpass." ".$bday." ".$nationality." ".$gender." ".$pnumber." ".$expdate." ".$ccode." ".$mnumber." ".$straddr." ".$city." ".$state." ".$country." ".$zipcode;
+  // echo $email." ".$firstname." ".$lastname." ".$pswrd." ".$cpass." ".$bday." ".$nationality." ".$gender." ".$pnumber." ".$expdate." ".$ccode." ".$mnumber." ".$straddr." ".$city." ".$state." ".$country." ".$zipcode;
    $db="kjana_fame";
 $host = "localhost";
     $dbUsername = "root";
@@ -30,18 +32,32 @@ $host = "localhost";
         die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
         }
        else{
-        $q = "INSERT INTO `kjana_psngr`(`first_name`, `last_name`, `dob`, `nationality`, `gender`, `pass_no`, `pass_exp`,`email`, `country_code`, `mobile_no`, `street`, `city`, `state`, `country`, `zipcode`, `c_val`, `password`) VALUES ('".$firstname."', '".$lastname."', '".$bday."','".$nationality."', '".$gender."', '".$pnumber."',
-         '".$expdate."','".$email."', '".$ccode."', '".$mnumber."', '".$straddr."', '".$city."', '".$state."', '".$country."', '".$zipcode."','P', '".$pswrd."');";
+        $nq = "SELECT `email` from `kjana_psngr` where `email` =  '".$email."'";
+        $id = $conn->query($nq);
+        if (mysqli_num_rows($id)>0)
+        {
+          echo "User Already exist please login";
+        }
+        else{
+          $q = "INSERT INTO `kjana_psngr`(`first_name`, `last_name`, `dob`, `nationality`, `gender`, `pass_no`, `pass_exp`,`email`, `country_code`, `mobile_no`, `street`, `city`, `state`, `country`, `zipcode`, `c_val`, `password`) VALUES ('".$firstname."', '".$lastname."', '".$bday."','".$nationality."', '".$gender."', '".$pnumber."','".$expdate."','".$email."', '".$ccode."', '".$mnumber."', '".$straddr."', '".$city."', '".$state."', '".$country."', '".$zipcode."','P', '".$pswrd."');";
 
-        echo $q;
+        // echo $q;
         if ($conn->query($q) === TRUE) {
-           echo "inserted ";
-        } else {
+          $nq = "SELECT `passenger_id` from `kjana_psngr` where `email` =  '".$email."'";
+          $id = $conn->query($nq);
+          $finfo = mysqli_fetch_assoc($id);
+          // 
+          // $_session['passenger_id'] = $finfo['passenger_id'] ;
+         }
+        else {
+
             echo "Error: " . $q. "<br>" . $conn->error;
                       }
 
         $conn->close();
-      }
+     
+        }
+    }
 
 //  for ($i= 0 ; $i < 6 ; $i++)
 //  {

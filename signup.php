@@ -98,7 +98,11 @@
 		{
 		if (xhttp.readyState == 4 && xhttp.status == 200)
 		{ // Check the status - if everything goes fine
-		alert(xhttp.response)
+			alert(xhttp.response)
+			// if (output === 'User Already exist please login')
+			// {
+			// 	window.location.href="login.php"
+			// } 
 			window.location.href="login.php"// display the content (response) from the serverside page
 		}
 		}
@@ -109,7 +113,7 @@
 		xhttp.send(parameters);
 		}
 		else{
-			window.location.href="signup (2).php"
+			window.location.href="signup.php"
 		}
 	}
   </script>
@@ -123,7 +127,7 @@
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
-                            <a class="navbar-brand" href="#">Logo</a>
+                            <a class="navbar-brand" href="#">Same Insurance</a>
                         </div>
                         <div class="col">
                             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
@@ -155,7 +159,13 @@
      	<div class= 'col-sm-6' style="color:white;text-align:left">Date of Birth:</div>
   		<div class= 'col-sm-6'><input type="Date"  id="bdate" style="width:100%;border-radius: 5px;border-color: white"></div>
   		<div class= 'col-sm-6'><input type="Text" placeholder="Nationality" id="nationality" style="width:100%"></div>
-  		<div class= 'col-sm-6 '><input type="Text" placeholder="Gender" id="gender" style="width:100%"></div>
+  		<div class= 'col-sm-6'>
+  			 <!-- <label class="form-label" for="d_date">Gender</label> -->
+  			  <select class="form-control mt-1"  id="gender" name="airline_name" style="width:100%">
+                                 <option  value="M">Male</option> 
+                                 <option  value="F">Female</option>
+                             </select>
+  		</div>
      	<div class= 'col-sm-6' style="color:white;text-align:left;display: flex;align-items: center;">Passport No :</div>
 		<div class= 'col-sm-6'><input type="Text"  id="pnumber" placeholder="Passport number" style="width:100%;border-radius: 5px;border-color: white"></div>
      	<div class= 'col-sm-6 mt-2' style="color:white;text-align:left">Passport Exp date :</div>
@@ -164,7 +174,7 @@
   		<div class= 'col-sm-6 my-3'><input type="email"  id="email" placeholder="Email" style="width:100%;border-radius: 5px;border-color: white"></div>
      	<div class= 'col-sm-3' style="color:white;text-align:left;display: flex;align-items: center;">Mobile :</div>
   	 	<div class= 'col-sm-3'>
-			<select id="countryCode" id="" style="width:100%;padding:2px 3px 0 0;margin-top: 10px">
+			<select id="countryCode"  style="width:100%;padding:2px 3px 0 0;margin-top: 10px">
 				<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 				<option data-countryCode="US" value="1">USA (+1)</option>
 				<optgroup label="Other countries">
@@ -386,8 +396,8 @@
 			</select>
 		</div>
 		<div class='col-sm-6'><input type="text" id="mnumber" placeholder="Mobile no" style="width:100%"></div>
-    	<div class='col-sm-6'><input type="text" id="pswrd" placeholder="Password" style="width:100%"></div>	
-    	<div class='col-sm-6'><input type="text" id="cpswrd" placeholder="Confirm password" style="width:100%"></div>	
+    	<div class='col-sm-6'><input type="password" id="pswrd" placeholder="Password" style="width:100%"></div>	
+    	<div class='col-sm-6'><input type="password" id="cpswrd" placeholder="Confirm password" style="width:100%"></div>	
  	</div>
     <div class="row">
     	<div class='col-sm-12'>

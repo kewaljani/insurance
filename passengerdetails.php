@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +16,40 @@
 
     <script  type="text/javascript">
 
-        function viewdisplay(){
-            var data = document.getElementById('member_type').value;
-            if (data==='airline')
-            {
-                document.getElementById('airline').style.display="block";
-                document.getElementById('agent').style.display="none";
-            }
-            if(data==='agent')
-            {
-                document.getElementById('airline').style.display="none";
-                document.getElementById('agent').style.display="block";
-            }
-            if(data==='direct')
-            {
-                document.getElementById('airline').style.display="none";
-                document.getElementById('agent').style.display="none";
-            }
+        function change(){
+            alert("hey");
+    var first=document.getElementById('fname').value;
+    var last=document.getElementById('lname').value;
+    var bday=document.getElementById('bdate').value;
+    var nationality=document.getElementById('nationality').value;
+    var gender=document.getElementById('gender').value;
+    var pnumber =document.getElementById('pnumber').value;
+    var expdate=document.getElementById('pexpdate').value;
+    var email=document.getElementById('email').value;
+    var ccode = document.getElementById('ccode').value;
+    var mnumber = document.getElementById('mnumber').value;
+    // var pswrd=document.getElementById('pswrd').value;
+    //       var cpswrd=document.getElementById('cpswrd').value;
+    var straddr=document.getElementById('straddr').value;
+    var city = document.getElementById('city').value;
+    var state=document.getElementById('state').value;
+    var country=document.getElementById('country').value;
+    var zipcode = document.getElementById('zipcode').value;
+    alert(first)
+    alert(last)
+    alert(bday)
+    alert(nationality)
+    alert(gender)
+    alert(pnumber)
+    alert(expdate)
+    alert(email)
+    alert(ccode)
+    alert(mnumber)
+    alert(straddr)
+    alert(city)
+    alert(country)
+    alert(zipcode)
+        window.location.href="flightDetailForm.php"
         }
     </script>
     <style>
@@ -107,48 +128,60 @@
                         <h1>Passenger Detail</h1>
                     </div>
                     <?php
-                    for ($x = 1; $x <= 2; $x++) {
+                    for ($x = 1; $x <=$_SESSION["passengerno"]; $x++) {
                     ?>
                      <label class="form-label text_white" for="flight_id"><?php echo "Passenger " . $x?> </label>
                     <div class="row">
                     <div class="col-6">
                         <div class="form-outline">
                            
-                            <input type="text" id="flight_id" placeholder="first name" name="flight_id" class="form-control" />
+                            <input type="text" id="fname" placeholder="first name" name="fname" class="form-control" />
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-outline">
-                            
-                            <input type="text" id="flight_id" placeholder="last name" name="flight_id" class="form-control" />
+
+                                                    
+                            <input type="text" id="lname" placeholder="last name" name="lname" class="form-control" />
                         </div>
                     </div>
+
                     </div>
                     <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="form-outline">
                         <label class="form-label text_white" for="flight_id"></label>
-                            <input type="number" id="flight_id" placeholder="Nationality" name="flight_id" class="form-control" />
+                            <input type="text" id="nationality" placeholder="Nationality" name="nationality" class="form-control" />
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="form-outline">
                             <label class="form-label text_white" for="flight_id"></label>
-                            <input type="Text" id="flight_id" placeholder="Gender" name="flight_id" class="form-control" />
+                            <input type="Text" id="email" placeholder="Email" name="flight_id" class="form-control" />
                         </div>
                     </div>
+                     <div class="col-3">
+                       <label class="form-label text_white" for="flight_id" style="margin: 30px 0 0 10px;"> Date Of Birth :</label>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="date" id="bdate" placeholder="Gender" name="bdate" class="form-control" />
+                        </div>
+                    </div>
+                    
                     </div>
                     <div class="row">
                     <div class="col-3">
                         <div class="form-outline">
                             <label class="form-label text_white" for="flight_id"></label>
-                            <input type="number" id="flight_id" placeholder="passport Number" name="flight_id" class="form-control" />
+                            <input type="text" id="pnumber" placeholder="passport Number" name="pnumber" class="form-control" />
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="form-outline">
                             <label class="form-label text_white" for="flight_id"></label>
-                            <input type="Text" id="flight_id" placeholder="Gender" name="flight_id" class="form-control" />
+                            <input type="Text" id="gender" placeholder="Gender" name="gender" class="form-control" />
                         </div>
                     </div>
                     <div class="col-3">
@@ -157,7 +190,53 @@
                     <div class="col-3">
                         <div class="form-outline">
                             <label class="form-label text_white" for="flight_id"></label>
-                            <input type="date" id="flight_id" placeholder="Gender" name="flight_id" class="form-control" />
+                            <input type="date" id="pexpdate" placeholder="Gender" name="pexpdate" class="form-control" />
+                        </div>
+                    </div>
+                    </div>
+                        <div class='row'>
+                             <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="number" id="ccode" placeholder="country code" name="ccode" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="number" id="mnumber" placeholder="Mobile number" name="mnumber" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="text" id="straddr" placeholder="Street Address" name="straddr" class="form-control" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="text" id="city" placeholder="City" name="city" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="Text" id="state" placeholder="state" name="state" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="Text" id="country" placeholder="country" name="country" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-outline">
+                            <label class="form-label text_white" for="flight_id"></label>
+                            <input type="text" id="zipcode" placeholder="zipcode" name="zipcode" class="form-control" />
                         </div>
                     </div>
                     </div>
@@ -166,7 +245,7 @@
             </div>
             <div class="col-12 d-flex justify-content-end">
     <!-- Submit button -->
-    <button type="submit" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
+    <button type="button" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
 </div>
 </form>
 </div>
