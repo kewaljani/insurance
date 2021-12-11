@@ -182,13 +182,13 @@
                             <div class="col-6" class='agent'>
                                <label class="form-label text_white" for="flight_id">Agent Name</label>
                                <select class="form-control" id="agent_name" name="flight_type" >
-                                <option  value="Option1">Kayak</option> 
-                                <option  value="Option2">Expedia</option> 
-                                <option  value="Option3">Priceline</option> 
-                                <option  value="Option4">Orbitz</option> 
-                                <option  value="Option5">Hotwire</option> 
-                                <option  value="Option6">CheapOair</option> 
-                                <option  value="Option7">Travelocity</option> 
+                                <option  value="Kayak">Kayak</option> 
+                                <option  value="Expedia">Expedia</option> 
+                                <option  value="Priceline">Priceline</option> 
+                                <option  value="Orbitz">Orbitz</option> 
+                                <option  value="Hotwire">Hotwire</option> 
+                                <option  value="CheapOair">CheapOair</option> 
+                                <option  value="Travelocity">Travelocity</option> 
                             </select>
                         </div>
                         <div class="col-6">
@@ -436,44 +436,44 @@
              <label class="form-label text_white" for="flight_id">Membership  type</label>
              <select class="form-control" id="flight_type" name="flight_type" >
                 <option  value="TrueBlue">TrueBlue</option> 
-                <option  value="Option2">Rapid Rewards</option> 
-                <option  value="Option3">Mileage Plan</option> 
-                <option  value="Option4">SkyMiles</option> 
-                <option  value="Option5">AAdvantage</option> 
-                <option  value="Option6">MileagePlus</option> 
-                <option  value="Option7">HawaiianMiles</option> 
-                <option  value="Option8">British Airways Executive Club</option> 
-                <option  value="Option9">AirFrance & KLM Flying Blue</option> 
-                <option  value="Option10">Virgin Atlantic Flying Club</option>
-                <option  value="Option8">Emirates Skywards Blue</option> 
-                <option  value="Option9">Emirates Skywards Silver</option> 
-                <option  value="Option10">Emirates Skywards Gold</option>
-                <option  value="Option10">Emirates Skywards Platinum</option>
+                <option  value="Rapid Rewards">Rapid Rewards</option> 
+                <option  value="Mileage Plan">Mileage Plan</option> 
+                <option  value="SkyMiles">SkyMiles</option> 
+                <option  value="AAdvantage">AAdvantage</option> 
+                <option  value="MileagePlus">MileagePlus</option> 
+                <option  value="Hawaiian Miles">Hawaiian Miles</option> 
+                <option  value="British Airways Executive Club">British Airways Executive Club</option> 
+                <option  value="AirFrance & KLM Flying Blue">AirFrance & KLM Flying Blue</option> 
+                <option  value="Virgin Atlantic Flying Club">Virgin Atlantic Flying Club</option>
+                <option  value="Emirates Skywards Blue">Emirates Skywards Blue</option> 
+                <option  value="Emirates Skywards Silver">Emirates Skywards Silver</option> 
+                <option  value="Emirates Skywards Gold">Emirates Skywards Gold</option>
+                <option  value="Emirates Skywards Platinum">Emirates Skywards Platinum</option>
             </select>
         </div>
 
         <div class="col-6" style="widh:100%">
           <label class="form-label text_white" for="flight_id">Airline member of</label>
           <select class="form-control" id="flight_type" name="flight_type" >
-            <option  value="Option1">American Airlines</option> 
-            <option  value="Option2">JetBlue Airways</option> 
-            <option  value="Option3">US Airways</option> 
-            <option  value="Option4">Delta Air Lines</option> 
-            <option  value="Option5">United Airlines</option> 
-            <option  value="Option6">Emirates</option> 
-            <option  value="Option7">Qatar Airways</option> 
-            <option  value="Option8">Air China</option> 
-            <option  value="Option9">Cathay Pacific</option> 
-            <option  value="Option10">China Airlines</option> 
-            <option  value="Option11">China Southern Airlines</option> 
-            <option  value="Option12">British Airways</option> 
-            <option  value="Option13">Lufthansa</option> 
-            <option  value="Option14">Swiss</option> 
-            <option  value="Option15">Korean Air</option> 
-            <option  value="Option16">Air Canada</option> 
-            <option  value="Option17">Air India</option> 
-            <option  value="Option18">Jet Airways</option> 
-            <option  value="Option19">Singapore Airlines</option> 
+            <option  value="American Airlines">American Airlines</option> 
+            <option  value="JetBlue Airways">JetBlue Airways</option> 
+            <option  value="US Airways">US Airways</option> 
+            <option  value="Delta Air Lines">Delta Air Lines</option> 
+            <option  value="United Airlines">United Airlines</option> 
+            <option  value="Emirates">Emirates</option> 
+            <option  value="Qatar Airways">Qatar Airways</option> 
+            <option  value="Air China">Air China</option> 
+            <option  value="Cathay Pacific">Cathay Pacific</option> 
+            <option  value="China Airlines">China Airlines</option> 
+            <option  value="China Southern Airlines">China Southern Airlines</option> 
+            <option  value="British Airways">British Airways</option> 
+            <option  value="Lufthansa">Lufthansa</option> 
+            <option  value="Swiss">Swiss</option> 
+            <option  value="Korean Air">Korean Air</option> 
+            <option  value="Air Canada">Air Canada</option> 
+            <option  value="Air India">Air India</option> 
+            <option  value="Jet Airways">Jet Airways</option> 
+            <option  value="Singapore Airlines">Singapore Airlines</option> 
         </select>
     </div>
 </div>
@@ -518,12 +518,12 @@
 <div class="col-12">
             <label class="form-label" for="d_date">Insurance Type (200$)</label>
           <select class="form-control" id="member_type" name="airline_name"  onchange="viewdisplay();" >
-            <option  value="direct" selected>Trip Cancellation</option>
-            <option  value="airline">Trip Interruption </option> 
-            <option  value="agent" >Medical Insurance</option> 
-            <option  value="agent" >Baggage Insurance </option> 
-            <option  value="agent" >Accidental Death Insurance</option> 
-            <option  value="agent" >All-inclusive Insurance</option> 
+            <option  value="Trip Cancellation" selected>Trip Cancellation</option>
+            <option  value="Trip Interruption">Trip Interruption </option> 
+            <option  value="Medical Insurance" >Medical Insurance</option> 
+            <option  value="Baggage Insurance" >Baggage Insurance </option> 
+            <option  value="Accidental Death Insurance" >Accidental Death Insurance</option> 
+            <option  value="All-inclusive Insurance" >All-inclusive Insurance</option> 
         </select>
     </div>
 <!-- <div class="col-6">
