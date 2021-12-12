@@ -41,3 +41,11 @@
 .comman_card {
     background-color: gray;
 }
+
+.navbar {
+    z-index: 50 !important;
+    top: 0 !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 60px !important;
+}

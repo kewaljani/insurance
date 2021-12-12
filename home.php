@@ -20,12 +20,12 @@ session_start();
 
 <body style="background-color:gray">
     <!-- <?php
-    // print_r($_SESSION['pid']);
-    ?> -->
+            // print_r($_SESSION['pid']);
+            ?> -->
     <!-- Header -->
     <div class="row">
         <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;  z-index: 50;top: 0;position: fixed;width: 100%;height: 60px;">
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
@@ -80,7 +80,7 @@ session_start();
                 </a>
             </li>
             <li>
-                <a href="invoice.php">
+                <a href="paymentmethod.php">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>Payment
                 </a>
             </li>
@@ -96,6 +96,42 @@ session_start();
             <!-- Loop the below Card -->
             <div class="col-sm-12">
                 <!-- Card 1 -->
+                <div class="card m-2">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <div><strong>Flight Name</strong> </div>
+                            <div>Flight Id</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h6>Departure: From</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>Destination: To</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h6>Departure Date: 23/5/2022</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6>Travel Class: Buisness Class</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h6>No of Seats: 2</h6>
+                            </div>
+                        </div>
+                        <p class="card-text">
+                            Arline detail........
+                        </p>
+                        <a href="insurance.php" class="btn btn-secondary">Insurance Detail</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
                 <div class="card m-2">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">

@@ -1,39 +1,41 @@
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: Times New Roman;
-  }
-  
-  * {
+}
+
+* {
     box-sizing: border-box;
-  }
-  
-  .bg-image {
+}
+
+.bg-image {
     /* The image used */
     background-image: url("../background.jpg");
-  
     /* Add the blur effect */
     filter: blur(5px);
     -webkit-filter: blur(5px);
-  
     /* Full height */
     height: 100%;
-  
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  
-  /* Position text in the middle of the page/image */
-  .bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+}
+
+
+/* Position text in the middle of the page/image */
+
+.bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
-    border-color:black;
+    border-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -43,13 +45,14 @@ body, html {
     height: 400px;
     padding: 20px;
     text-align: center;
-  }
-  .space
-  {
+}
+
+.space {
     margin: 0 0 20px 0
-  }
-  .btn {
-  /*  top: 50%;
+}
+
+.btn {
+    /*  top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);*/
@@ -61,13 +64,14 @@ body, html {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: black;
     color: white;
-  }
-  input[type=text] {
+}
+
+input[type=text] {
     width: 250px;
     height: 30px;
     padding: 12px 20px;
@@ -78,8 +82,9 @@ body, html {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-  }
-  input[type=password] {
+}
+
+input[type=password] {
     width: 250px;
     height: 30px;
     padding: 12px 20px;
@@ -90,14 +95,16 @@ body, html {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-  }
-  
-  input[type=text]:focus {
+}
+
+input[type=text]:focus {
     border: 3px solid black;
-  }
-  input[type=password]:focus {
+}
+
+input[type=password]:focus {
     border: 3px solid black;
-  }
-  #space{
-      margin:30px 0 0 0;
-  }
+}
+
+#space {
+    margin: 30px 0 0 0;
+}

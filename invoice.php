@@ -22,7 +22,7 @@
     <!-- Header -->
     <div class="row">
         <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;  z-index: 50;top: 0;position: fixed;width: 100%;height: 60px;">
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li>
-                <a href="invoice.php">
+                <a href="paymentmethod.php">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>Payment
                 </a>
             </li>

@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <title>Flight Detail</title>
+    <title>Payment</title>
 </head>
 
 <body style="background-color:gray;">
@@ -83,7 +83,51 @@
     <div class="content-container">
         <!-- Content -->
         <div class="row p-4">
-
+            <div class="col-8">
+                <form action="paymentmethod.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
+                    <div class="row p-4">
+                        <div class="col-12 text_white fw-bolder">
+                            <h1>Payment</h1>
+                        </div>
+                        <hr />
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <label class="form-label text_white" for="amount">Enter Amount</label>
+                                <input type="text" id="amount" name="amount" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <label class="form-label text_white" for="card_no">Card Numbeer</label>
+                                <input type="text" id="card_no" name="card_no" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <label class="form-label text_white" for="card_name">Name on card</label>
+                                <input type="text" id="card_name" name="card_name" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-outline">
+                                <label class="form-label text_white" for="exp_date">Expiry Date</label>
+                                <input type="date" id="exp_date" name="exp_date" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-outline">
+                                <label class="form-label text_white" for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <div class="form-outline">
+                                <button type="submit" class="btn btn-secondary mt-4 mb-4">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>

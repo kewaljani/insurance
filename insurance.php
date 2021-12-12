@@ -116,14 +116,14 @@
             width: 125px;
         }
     </style>
-    <title>Flight Detail</title>
+    <title>Customer Detail</title>
 </head>
 
 <body style="background-color:grey;">
     <!-- Header -->
     <div class="row">
         <div class="col">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: inset 0 0 10px #000000;  z-index: 50;top: 0;position: fixed;width: 100%;height: 60px;">
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
@@ -176,7 +176,7 @@
                 </a>
             </li>
             <li>
-                <a href="invoice.php">
+                <a href="paymentmethod.php">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>Payment
                 </a>
             </li>
@@ -184,13 +184,13 @@
     </div>
     <!-- Body -->
     <div class="content-container">
-        <div class="row">
-            <div class="col-12 p-4">
+        <div class="row  p-4">
+            <div class="col-12">
                 <form action="passengerdetails.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
                     <div class="container">
-                        <div class="row g-3">
+                        <div class="row p-4">
                             <div class="col-12 text_white fw-bolder">
-                                <h1>Customer Detail</h1>
+                                <h1>Customer Detail (Insurance)</h1>
                             </div>
                             <div class="col-6">
                                 <div class="form-outline">
@@ -209,7 +209,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row " style="margin-left:0;display:none;padding:0;" id='agent' name='agent'>
+                            <div class="col-12" style="margin-left:0;display:none;padding:0;" id='agent' name='agent'>
                                 <div class="row" style="padding:0;margin:0;width:100%">
                                     <div class="col-6" class='agent'>
                                         <label class="form-label text_white" for="flight_id">Agent Name</label>
@@ -553,11 +553,10 @@
                                     <option value="All-inclusive Insurance">All-inclusive Insurance</option>
                                 </select>
                             </div>
-                            <div class="col-6">
-    
+
                             <div class="col-12 d-flex justify-content-end">
                                 <!-- Submit button -->
-                                <button type="button" class="btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
+                                <button type="button" class="btn btn-secondary mt-4 mb-4" onclick='change();'>Next</button>
                             </div>
                         </div>
                     </div>

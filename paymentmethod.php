@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <title>Flight Detail</title>
+    <title>Choose Payment Menthod</title>
 </head>
 
 <body style="background-color:gray;">
@@ -73,7 +73,7 @@
                 </a>
             </li>
             <li>
-                <a href="invoice.php">
+                <a href="paymentmethod.php">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>Payment
                 </a>
             </li>
@@ -83,7 +83,54 @@
     <div class="content-container">
         <!-- Content -->
         <div class="row p-4">
+            <div class="col-7">
+                <form action="payment.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
+                    <div class="row p-4">
+                        <div class="col-12 text_white mb-4">
+                            <h1>Choose Payment Method</h1>
+                        </div>
+                        <div class="col-12 text_white fw-bolder border-bottom border-top py-4">
+                            <h5>Payment of $50000</h5>
+                        </div>
+                        <div class="col-12 my-4">
+                            <div class="py-3">
+                                <input type="radio" id="debit" name="drone" value="debit" checked>
+                                <label for="debit" class="ml-4">
+                                    <div class="btn btn-secondary w-100">
+                                        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Debit Card
+                                    </div>
+                                </label>
+                            </div>
 
+                            <div class="py-3">
+                                <input type="radio" id="credit" name="drone" value="credit">
+                                <label for="credit" class="ml-4">
+                                    <div class="btn btn-secondary">
+                                        <i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Credit Card
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- <div class="py-3">
+                                <input type="radio" id="louie" name="drone" value="split">
+                                <label for="split" class="ml-4">
+                                    <div class="btn btn-secondary w-100">
+                                        Split Payment
+                                    </div>
+                                </label>
+                            </div> -->
+                        </div>
+                        <div class="col-12 border-top pt-4 ">
+                            <a href="payment.php">
+                                <div class="btn btn-secondary w-100">
+
+                                    Split the Payment
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
