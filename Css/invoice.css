@@ -1,5 +1,5 @@
 .height {
-    min-height: 170px;
+    min-height: 270px;
 }
 
 .icon {
@@ -12,14 +12,14 @@
     color: #5CB85C;
 }
 
-.table > tbody > tr > .emptyrow {
+.table>tbody>tr>.emptyrow {
     border-top: none;
 }
 
-.table > thead > tr > .emptyrow {
+.table>thead>tr>.emptyrow {
     border-bottom: none;
 }
 
-.table > tbody > tr > .highrow {
+.table>tbody>tr>.highrow {
     border-top: 3px solid;
 }

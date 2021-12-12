@@ -15,6 +15,49 @@ session_start();
     
     <title>Invoice</title>
     <script type="text/javascript">
+            function deletes(x){
+                var pid = document.getElementById("pid"+x).innerHTML; 
+                alert(pid);
+                 var xhttp;
+                    xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                    xhttp.onreadystatechange = function() {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            alert(xhttp.response);
+                             var myObj = JSON.parse(JSON.stringify(this.responseText));
+                             // alert(myObj);
+                                // var array=myObj.split('<br>');
+                                // var display= JSON.parse(array[0]);
+                                // alert(display)
+                                window.location.href="editpage.php";
+                            }
+                        } 
+                    xhttp.open("POST", "deleteuser.php", true); // this is the url
+                    parameters = "pid= "+pid;
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(parameters);
+            }
+            function update(x)
+            {
+                var pid = document.getElementById("pid"+x).innerHTML; 
+                alert(pid);
+                var xhttp;
+                    xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                    xhttp.onreadystatechange = function() {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            alert(xhttp.response);
+                             var myObj = JSON.parse(JSON.stringify(this.responseText));
+                             // alert(myObj);
+                                // var array=myObj.split('<br>');
+                                // var display= JSON.parse(array[0]);
+                                // alert(display)
+                                window.location.href="finalupdate.php";
+                            }
+                        } 
+                    xhttp.open("POST", "updatemessages.php", true); // this is the url
+                    parameters = "pid= "+pid;
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(parameters);
+                }
             function retrive()
           {
                     //alert("hey")
@@ -26,16 +69,25 @@ session_start();
                             //echo myarray.row;
                         var myObj = JSON.parse(JSON.stringify(this.responseText));
                                 var array=myObj.split('<br>');
-                    alert(myObj);
+                            // alert(array)
 
                             var display= JSON.parse(array[0]);
-                            //alert(display.display);
-                            document.getElementById("login_name").innerHTML=display.display;
+                            // alert(display.pid);
+
+                            // document.getElementById("login_name").innerHTML=display.display;
                             for (i = 0; i <array.length-1; i++) {
-                                //alert(array[i]);
+                              
                                 var parser=JSON.parse(array[i]);
-                            document.getElementById(i+11).innerHTML =parser.name;// display the content (response) from the serverside page
-                                document.getElementById(i+1).innerHTML= parser.subject;
+                                document.getElementById("view"+i).style.display = "block";
+                                // alert("name"+i);
+                            document.getElementById("pid"+i).innerHTML =parser.pid;// display the content (response) from the serverside page
+                            document.getElementById("name"+i).innerHTML ="Name = "+parser.fname;// display the content (response) from the serverside page
+                            document.getElementById("dob"+i).innerHTML ="DOB = "+parser.dob;// display the content (response) from the serverside page
+                            document.getElementById("email"+i).innerHTML ="EMAIL = "+parser.email;// display the content (response) from the serverside page
+                            document.getElementById("nationality"+i).innerHTML ="Nationality = "+parser.nationality;// display the content (response) from the serverside page
+                            document.getElementById("passport"+i).innerHTML ="passport no = "+parser.passport;// display the content (response) from the serverside page
+                            document.getElementById("mobile"+i).innerHTML ="mobile no = "+parser.mobileno;// display the content (response) from the serverside page
+                                // document.getElementById(i+1).innerHTML= parser.subject;
                             }
 
                         }
@@ -93,7 +145,7 @@ session_start();
 	</div>
     <!-- Body -->
     <div class="row g-3 pt-2 d-flex justify-content-center body_section" style="background-color:grey">
-    <div class="container">
+    <!-- <div class="container"> -->
             <!-- Side bar -->
                 <!-- <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="home.php">TimeLine</a></h5></div>
                 <div class="row px-5 py-2 custom_border nav-item"><h5><a class="nav-link" href="flightDetailForm.php">Flights</a></h5></div>
@@ -107,31 +159,180 @@ session_start();
                     </div>
                     <!-- Loop the below Card -->
                         <!-- Card 1 -->
-                        <div class="card m-2">
+                        <div class="card col-sm-12" id="view0" style="display:none">
                     <div class="col-sm-12">
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
-                                    <div>passenger Name</div>
-                                    <div>mobile no</div>   
+                                    <div style="display:none"><h6 id="pid0"></h6></div>
+                                    <div ><h6 id="name0">passenger Name</h6></div>
+   
                                 </div>
                             </div>
+                           
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-6"><h6>Dob:</h6></div>
-                                    <div class="col-sm-6"><h6>Passport Details:</h6></div>  
+                                    <div class="col-sm-6"><h6 id="dob0">Dob:</h6></div>
+                                    <div class="col-sm-6"><h6 id="passport0">Passport Details:</h6></div>  
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-6"><h6 >Email: </h6></div>
-                                    <div class="col-sm-6"><h6 >Nationality  : </h6></div>   
+                                    <div class="col-sm-6"><h6 id="email0">Email: </h6></div>
+                                    <div class="col-sm-6"><h6 id="nationality0">Nationality  : </h6></div>   
                                 </div>
-                                <div class="row"><div class="col-sm-12"><h6>Mobile No</h6></div></div>
+                                <div class="row"><div class="col-sm-12"><h6  id="mobile0">Mobile No</h6></div></div>
                                 <p class="card-text">
                                 </p>
-                                <a href="updatedetail.php" class="btn btn-secondary">Passenger Detail</a>
+                                <div class="row">
+                                 <div  class=" col-sm-6 card-body">
+                                <button onclick="update(0);" class="btn btn-secondary">Update Detail</a>
+                            </div>
+                             <div  class=" col-sm-6 card-body">
+                                <button onclick="deletes(0); "class="btn btn-danger">Delete User</a>
+                            </div>
+                            </div>
                             </div>
                         </div> 
                         </div> 
-                        <!-- Card 2 -->
+                        <!-- card2 -->
+                         <div class="card col-sm-12 mt-2" id="view1" style="display:none">
+                    <div class="col-sm-12">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div style="display:none"><h6 id="pid1"></h6></div>
+                                    <div ><h6 id="name1">passenger Name</h6></div>
+   
+                                </div>
+                            </div>
+                           
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="dob1">Dob:</h6></div>
+                                    <div class="col-sm-6"><h6 id="passport1">Passport Details:</h6></div>  
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="email1">Email: </h6></div>
+                                    <div class="col-sm-6"><h6 id="nationality1">Nationality  : </h6></div>   
+                                </div>
+                                <div class="row"><div class="col-sm-12"><h6  id="mobile1">Mobile No</h6></div></div>
+                                <p class="card-text">
+                                </p>
+                                 <div class="row">
+                                 <div  class=" col-sm-6 card-body">
+                                <button onclick="update(1);" class="btn btn-secondary">Update Detail</a>
+                            </div>
+                             <div  class=" col-sm-6 card-body">
+                                <button onclick="deletes(1); "class="btn btn-danger">Delete User</a>
+                            </div>
+                            </div>
+                            </div>
+                        </div> 
+                        </div> 
+                        <!-- Card 3 -->
+                         <div class="card col-sm-12 mt-2" id="view2" style="display:none"> 
+                    <div class="col-sm-12">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div style="display:none"><h6 id="pid2"></h6></div>
+                                    <div ><h6 id="name2">passenger Name</h6></div>
+   
+                                </div>
+                            </div>
+                           
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="dob2">Dob:</h6></div>
+                                    <div class="col-sm-6"><h6 id="passport2">Passport Details:</h6></div>  
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="email2">Email: </h6></div>
+                                    <div class="col-sm-6"><h6 id="nationality2">Nationality  : </h6></div>   
+                                </div>
+                                <div class="row"><div class="col-sm-12"><h6  id="mobile2">Mobile No</h6></div></div>
+                                <p class="card-text">
+                                </p>
+                                 <div class="row">
+                                 <div  class=" col-sm-6 card-body">
+                                    <button onclick="update(2);" class="btn btn-secondary">Update Detail</a>
+                                </div>
+                                <div  class=" col-sm-6 card-body">
+                                    <button onclick="deletes(2); "class="btn btn-danger">Delete User</a>
+                                </div>
+                                </div>
+                            </div>
+                        </div> 
+                        </div> 
+                         <!-- Card 2 -->
+                         <div class="card col-sm-12 mt-2" id="view3" style="display:none">
+                    <div class="col-sm-12">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div style="display:none"><h6 id="pid3"></h6></div>
+                                    <div ><h6 id="name3">passenger Name</h6></div>
+   
+                                </div>
+                            </div>
+                           
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="dob3">Dob:</h6></div>
+                                    <div class="col-sm-6"><h6 id="passport3">Passport Details:</h6></div>  
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="email3">Email: </h6></div>
+                                    <div class="col-sm-6"><h6 id="nationality3">Nationality  : </h6></div>   
+                                </div>
+                                <div class="row"><div class="col-sm-12"><h6  id="mobile3">Mobile No</h6></div></div>
+                                <p class="card-text">
+                                </p>
+                                  <div class="row">
+                                 <div  class=" col-sm-6 card-body">
+                                    <button onclick="update(3);" class="btn btn-secondary">Update Detail</a>
+                                </div>
+                                <div  class=" col-sm-6 card-body">
+                                    <button onclick="deletes(3); "class="btn btn-danger">Delete User</a>
+                                </div>
+                                </div>
+                           
+                            </div>
+                        </div> 
+                        </div> 
+                    <!-- Card 2 -->
+                         <div class="card col-sm-12 mt-2" id="view4" style="display:none">
+                    <div class="col-sm-12">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    <div style="display:none"><h6 id="pid4"></h6></div>
+                                    <div ><h6 id="name4">passenger Name</h6></div>
+   
+                                </div>
+                            </div>
+                           
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="dob4">Dob:</h6></div>
+                                    <div class="col-sm-6"><h6 id="passport4">Passport Details:</h6></div>  
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6"><h6 id="email4">Email: </h6></div>
+                                    <div class="col-sm-6"><h6 id="nationality4">Nationality  : </h6></div>   
+                                </div>
+                                <div class="row"><div class="col-sm-12"><h6  id="mobile4">Mobile No</h6></div></div>
+                                <p class="card-text">
+                                </p>
+                                 <div class="row">
+                                 <div  class=" col-sm-6 card-body">
+                                    <button onclick="update(4);" class="btn btn-secondary">Update Detail</a>
+                                </div>
+                                <div  class=" col-sm-6 card-body">
+                                    <button onclick="deletes(4); "class="btn btn-danger">Delete User</a>
+                                </div>
+                                </div>
+                           
+                            </div>
+                        </div> 
+                        </div> 
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="button" class="btn-secondary mt-4 mb-4" style="display: block" onclick='window.location.href="flightDetailForm.php"'>Next</button>
+                        </div>
                         <!-- <div class="card m-2">
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
@@ -145,7 +346,7 @@ session_start();
                                     <div class="col-sm-6"><h6>Destination: To</h6></div>  
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-6"><h6 >Departure Date: 23/5/2022</h6></div>
+                                    <div class="col-sm-6"><h6 >Departure Date: 23/5/2422</h6></div>
                                     <div class="col-sm-6"><h6 >Travel Class: Buisness Class</h6></div>   
                                 </div>
                                 <div class="row"><div class="col-sm-12"><h6>No of Seats: 2</h6></div></div>
@@ -157,9 +358,5 @@ session_start();
                         </div>  --> 
                     <!-- </div>     -->
                 </div>          
-            <div>
-        <div>        
-    </div>
-</div>
 </body>
 </html>

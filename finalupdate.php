@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+echo json_encode($_SESSION['updateuser']);
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,9 @@ session_start();
 
 	   function next(){
 	 alert("hey");
-	 var x = <?php echo (int)$_SESSION["passengerno"]-1;?>;
-	 alert(x)
+	 // alert(x)
+     var x =  <?php echo json_encode($_SESSION['updateuser']);  ?>;
+    var array = JSON.parse(JSON.stringify(x));
     var first=document.getElementById('fname').value;
     var last=document.getElementById('lname').value;
     var bday=document.getElementById('bdate').value;
@@ -40,30 +41,7 @@ session_start();
     var country=document.getElementById('country').value;
     var zipcode = document.getElementById('zipcode').value;
      xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
-     if (x >0 )
-     {
         xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
-        xhttp.onreadystatechange = function()
-        {
-        if (xhttp.readyState == 4 && xhttp.status == 200)
-            { // Check the status - if everything goes fine
-            alert(xhttp.response)
-            // if (output === 'User Already exist please login')
-            // {
-            //  window.location.href="login.php"
-            // } 
-            // window.location.href="login.php"// display the content (response) from the serverside page
-            window.location.href="passengerdetails.php"
-            }
-        }
-
-        xhttp.open("POST", "db2.php", true); // this is the url
-        parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last;
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(parameters);
-	   }
-	   else{
-	   	xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
         xhttp.onreadystatechange = function()
         {
         if (xhttp.readyState == 4 && xhttp.status == 200)
@@ -78,66 +56,66 @@ session_start();
             }
         }
 
-        xhttp.open("POST", "db2.php", true); // this is the url
-        parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last;
+        xhttp.open("POST", "db3.php", true); // this is the url
+        parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last+"&pid="+array.pid;
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(parameters);
-	   }
 	}
         function change(){
-     
-     alert(x)
-    var first=document.getElementById('fname').value;
-    var last=document.getElementById('lname').value;
-    var bday=document.getElementById('bdate').value;
-    var nationality=document.getElementById('nationality').value;
-    var gender=document.getElementById('gender').value;
-    var pnumber =document.getElementById('pnumber').value;
-    var expdate=document.getElementById('pexpdate').value;
-    var email=document.getElementById('email').value;
-    var ccode = document.getElementById('ccode').value;
-    var mnumber = document.getElementById('mnumber').value;
+     var x =  <?php echo json_encode($_SESSION['updateuser']);  ?>;
+    var array = JSON.parse(JSON.stringify(x));
+     // alert(array.fname)
+    document.getElementById('fname').value = array.fname;
+    document.getElementById('lname').value = array.lname;
+    document.getElementById('bdate').value = array.dob;
+    document.getElementById('nationality').value = array.nationality;
+    document.getElementById('gender').value = array.gender;
+    document.getElementById('pnumber').value = array.passport;
+    document.getElementById('pexpdate').value = array.passexp;
+    document.getElementById('email').value = array.email;
+    document.getElementById('ccode').value = array.ccode;
+    document.getElementById('mnumber').value = array.mobileno;
     // var pswrd=document.getElementById('pswrd').value;
     // var cpswrd=document.getElementById('cpswrd').value;
-    var straddr=document.getElementById('straddr').value;
-    var city = document.getElementById('city').value;
-    var state=document.getElementById('state').value;
-    var country=document.getElementById('country').value;
-    var zipcode = document.getElementById('zipcode').value;
-    alert(first)
-    alert(last)
-    alert(bday)
-    alert(nationality)
-    alert(gender)
-    alert(pnumber)
-    alert(expdate)
-    alert(email)
-    alert(ccode)
-    alert(mnumber)
-    alert(straddr)
-    alert(city)
-    alert(country)
-    alert(zipcode)
+    var straddr=document.getElementById('straddr').value = array.street;
+    var city = document.getElementById('city').value = array.city;
+    var state=document.getElementById('state').value = array.state;
+    var country=document.getElementById('country').value = array.country;
+    var zipcode = document.getElementById('zipcode').value = array. zipcode;
+    // alert(first)
+    // alert(last)
+    // alert(bday)
+    // alert(nationality)
+    // alert(gender)
+    // alert(pnumber)
+    // alert(expdate)
+    // alert(email)
+    // alert(ccode)
+    // alert(mnumber)
+    // alert(straddr)
+    // alert(city)
+    // alert(country)
+    // alert(zipcode)
         // window.location.href="flightDetailForm.php"
-        xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
-        xhttp.onreadystatechange = function()
-        {
-        if (xhttp.readyState == 4 && xhttp.status == 200)
-            { // Check the status - if everything goes fine
-            alert(xhttp.response)
-            // if (output === 'User Already exist please login')
-            // {
-            //  window.location.href="login.php"
-            // } 
-            // window.location.href="login.php"// display the content (response) from the serverside page
-            window.location.href="flightDetailForm.php"
-            }
-        }
+        // xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+        // xhttp.onreadystatechange = function()
+        // {
+        // if (xhttp.readyState == 4 && xhttp.status == 200)
+        //     { // Check the status - if everything goes fine
+        //     alert(xhttp.response)
+        //     // if (output === 'User Already exist please login')
+        //     // {
+        //     //  window.location.href="login.php"
+        //     // } 
+        //     // window.location.href="login.php"// display the content (response) from the serverside page
+        //     window.location.href="flightDetailForm.php"
+        //     }
+        // }
 
-        xhttp.open("POST", "db2.php", true); // this is the url
-        parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last;
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(parameters);
+        // xhttp.open("POST", "db2.php", true); // this is the url
+        // parameters = "email= "+email+"&bday="+bday+"&nationality="+nationality+"&gender="+gender+"&pnumber="+pnumber+"&expdate="+expdate+"&ccode="+ccode+"&mnumber="+mnumber+"&straddr="+straddr+"&city="+city+"&state="+state+"&country="+country+"&zipcode="+zipcode+"&first="+first+ "&last="+last;
+        // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // xhttp.send(parameters);
        }
     </script>
     <style>
@@ -163,7 +141,7 @@ session_start();
 </style>
 <title>Flight Detail</title>
 </head>
-<body style="background-color:grey;">
+<body style="background-color:grey;" onload="change();">
     <!-- Header -->
     <div class="row">
       <div class="col">
@@ -331,7 +309,7 @@ session_start();
             </div>
             <div class="col-12 d-flex justify-content-end">
     <!-- Submit button -->
-    <button type="button" class="btn-secondary mt-4 mb-4" style="display: block" onclick='next();'>Next Passenger</button>
+    <button type="button" class="btn-secondary mt-4 mb-4" style="display: block" onclick='next();'>Save</button>
     <button type="button" class="btn-secondary mt-4 mb-4" style="display: none" onclick='change();'>Submit</button>
 </div>
 </form>
