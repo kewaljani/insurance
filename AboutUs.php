@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <title>Payment</title>
+    <title>About US</title>
 </head>
 
 <body style="background-color:gray;">
@@ -82,51 +82,33 @@
     <!-- Body -->
     <div class="content-container">
         <!-- Content -->
-        <div class="row p-4">
-            <div class="col-8">
-                <form action="paymentmethod.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
-                    <div class="row p-4">
-                        <div class="col-12 text_white fw-bolder">
-                            <h1>Payment</h1>
-                        </div>
-                        <hr />
-                        <div class="col-12">
-                            <div class="form-outline">
-                                <label class="form-label text_white" for="amount">Enter Amount</label>
-                                <input type="text" id="amount" name="amount" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-outline">
-                                <label class="form-label text_white" for="card_no">Card Numbeer</label>
-                                <input type="text" id="card_no" name="card_no" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-outline">
-                                <label class="form-label text_white" for="card_name">Name on card</label>
-                                <input type="text" id="card_name" name="card_name" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-outline">
-                                <label class="form-label text_white" for="exp_date">Expiry Date</label>
-                                <input type="date" id="exp_date" name="exp_date" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-outline">
-                                <label class="form-label text_white" for="cvv">CVV</label>
-                                <input type="text" id="cvv" name="cvv" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-end">
-                            <div class="form-outline">
-                                <button type="submit" class="btn btn-secondary mt-4 mb-4">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+        <div class="row p-4 text-white" style="display:flex;justify-content:center;">
+            <div class="col-12">
+                <h6>We Are Leading insurance distributor</h6>
+                <h1>We are a leading distributor of insurance in India outside of banks</h1>
+            </div>
+            <div class="col-12" style="margin-top: 1em;">
+                <h6>largest digital insurance marketplace</h6>
+                <h1>we have a huge number of market share based on the number of policies sold and many digital insurance sales in India by volume was transacted through us.</h1>
+            </div>
+
+            <div class="col-3" style="margin-top: 2em;">
+                <div class="Card">
+                    <h6>Our Mission</h6>
+                    <h1>Building a safety net for households in India.</h1>
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 2em;">
+                <div class="Card">
+                    <h6>Our Values</h6>
+                    <h1>Fairness to all our stakeholders</h1>
+                </div>
+            </div>
+            <div class="col-3" style="margin-top: 2em;">
+                <div class="Card">
+                    <h6>Our Vision</h6>
+                    <h1>A healthy and well-protected India</h1>
+                </div>
             </div>
         </div>
     </div>

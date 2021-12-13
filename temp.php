@@ -30,10 +30,10 @@
                             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
                                 <ul class="navbar-nav me-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link menulink" href="#">About Us</a>
+                                        <a class="nav-link menulink" href="AboutUs.php">About Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link menulink" href="#">Contact Us</a>
+                                        <a class="nav-link menulink" href="ContactUs.php">Contact Us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link menulink" href="login.php">LogOut</a>
