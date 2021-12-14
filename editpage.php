@@ -285,7 +285,7 @@ session_start();
                                 </p>
                                   <div class="row">
                                  <div  class=" col-sm-6 card-body">
-                                    <button onclick="update(3);" class="btn btn-secondary">Update Detail</a>
+                                    <button onclick="update(    );" class="btn btn-secondary">Update Detail</a>
                                 </div>
                                 <div  class=" col-sm-6 card-body">
                                     <button onclick="deletes(3); "class="btn btn-danger">Delete User</a>

@@ -43,34 +43,7 @@
                 }
             })
         });
-    </script>
-    <style>
-        label {
-            color: white
-        }
-
-        .error {
-            color: red;
-        }
-
-        .bgroudcolor {
-            background: linear-gradient(to right, #000000, #636c6d);
-        }
-
-        .upload-btn {
-            background: white;
-            font-size: 20px;
-            font-weight: 400;
-            color: black;
-            border-radius: 26px;
-            border: 1px solid white;
-            margin-top: 20px;
-            width: 125px;
-        }
-    </style>
-    <title>Flight Detail</title>
-    })
-  }); 
+    
   function change()
   {
     
@@ -85,6 +58,7 @@
   }
 </script>
 <style>
+    
     label{
       color:white
   }
