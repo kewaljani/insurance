@@ -83,14 +83,14 @@
     <div class="content-container">
         <!-- Content -->
         <div class="row p-4">
-            <div class="col-7">
+            <div class="col-6">
                 <form action="payment.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
                     <div class="row p-4">
                         <div class="col-12 text_white mb-4">
-                            <h1>Choose Payment Method</h1>
+                            <h2>Choose Payment Method</h2>
                         </div>
                         <div class="col-12 text_white fw-bolder border-bottom border-top py-4">
-                            <h5>Payment of $50000</h5>
+                            <h6>Payment of $50000</h6>
                         </div>
                         <div class="col-12 my-4">
                             <div class="py-3">

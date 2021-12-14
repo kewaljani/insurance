@@ -82,32 +82,32 @@
     <!-- Body -->
     <div class="content-container">
         <!-- Content -->
-        <div class="row p-4 text-white" style="display:flex;justify-content:center;">
-            <div class="col-12">
-                <h6>We Are Leading insurance distributor</h6>
-                <h1>We are a leading distributor of insurance in India outside of banks</h1>
+        <div class="row p-5 text-white" style="display:flex;justify-content:center;">
+            <div class="col-12 p-4" style="border:1px solid white; border-radius: 10px;">
+                <h1>We Are Leading insurance distributor</h1>
+                <h6>We are a leading distributor of insurance in India outside of banks</h6>
             </div>
-            <div class="col-12" style="margin-top: 1em;">
-                <h6>largest digital insurance marketplace</h6>
-                <h1>we have a huge number of market share based on the number of policies sold and many digital insurance sales in India by volume was transacted through us.</h1>
+            <div class="col-12 mt-4 p-4" style="border:1px solid white; border-radius: 10px;">
+                <h1>largest digital insurance marketplace</h1>
+                <h6>we have a huge number of market share based on the number of policies sold and many digital insurance sales in India by volume was transacted through us.</h6>
             </div>
 
-            <div class="col-3" style="margin-top: 2em;">
+            <div class="col-4 mt-4 p-4" style="border:1px solid white; border-radius: 10px;">
                 <div class="Card">
-                    <h6>Our Mission</h6>
-                    <h1>Building a safety net for households in India.</h1>
+                    <h1>Our Mission</h1>
+                    <h6>Building a safety net for households in India.</h6>
                 </div>
             </div>
-            <div class="col-3" style="margin-top: 2em;">
+            <div class="col-4 mt-4 p-4" style="border:1px solid white; border-radius: 10px;">
                 <div class="Card">
-                    <h6>Our Values</h6>
-                    <h1>Fairness to all our stakeholders</h1>
+                    <h1>Our Values</h1>
+                    <h6>Fairness to all our stakeholders</h6>
                 </div>
             </div>
-            <div class="col-3" style="margin-top: 2em;">
+            <div class="col-4 mt-4 p-4" style="border:1px solid white; border-radius: 10px;">
                 <div class="Card">
-                    <h6>Our Vision</h6>
-                    <h1>A healthy and well-protected India</h1>
+                    <h1>Our Vision</h1>
+                    <h6>A healthy and well-protected India</h6>
                 </div>
             </div>
         </div>

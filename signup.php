@@ -4,105 +4,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="Css/signup.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="Css/signup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript">
-		function ValidateEmail() {
-			var flag = 0;
-			var first = document.getElementById('fname').value;
-			var last = document.getElementById('lname').value;
-			var bday = document.getElementById('bdate').value;
-			var nationality = document.getElementById('nationality').value;
-			var gender = document.getElementById('gender').value;
-			var pnumber = document.getElementById('pnumber').value;
-			var expdate = document.getElementById('pexpdate').value;
+		function change() {
+			window.location.href = "signup.php";
+		}
+
+		function login() {
 			var email = document.getElementById('email').value;
-			var ccode = document.getElementById('countryCode').value;
-			var mnumber = document.getElementById('mnumber').value;
-			var pswrd = document.getElementById('pswrd').value;
-			var cpswrd = document.getElementById('cpswrd').value;
-			var straddr = document.getElementById('straddr').value;
-			var city = document.getElementById('city').value;
-			var state = document.getElementById('state').value;
-			var country = document.getElementById('country').value;
-			var zipcode = document.getElementById('zipcode').value;
-			if (cpswrd != pswrd) {
-				alert("enter same passwrod as both the time")
-				return (false)
-				flag = 1
-			}
-			var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-			if (pswrd.match(passw)) {} else {
-				alert('Wrong password format')
-				flag = 1;
-			}
-			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {} else {
-				alert("Email format invalid")
-				return false;
-				flag = 1
-			}
-
-			if (first === "" || last == "") {
-				alert('please enter valid name');
-				flag = 1
-			}
-			var optimizedBirthday = bday.replace(/-/g, "/");
-
-			//set date based on birthday at 01:00:00 hours GMT+0100 (CET)
-			var myBirthday = new Date(optimizedBirthday);
-
-			// set current day on 01:00:00 hours GMT+0100 (CET)
-			var currentDate = new Date().toJSON().slice(0, 10) + ' 01:00:00';
-
-			// calculate age comparing current date and borthday
-			var myAge = ~~((Date.now(currentDate) - myBirthday) / (31557600000));
-
-			if (myAge < 18) {
-				alert("invalid birthday below 18 years")
-				flag = 1
-			}
-			if (nationality == "") {
-				alert("please enter nationality")
-				flag = 1
-			}
-			if (gender == "") {
-				alert("please enter gender")
-				flag = 1
-
-			}
-			if (pnumber == "") {
-				alert("please enter passport number")
-				flag = 1
-			}
+			var password = document.getElementById('password').value;
 			var xhttp;
-			if (flag != 1) {
-				//alert(first,pswrd,last,email,enrollment,cpswr);
-				xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
-				xhttp.onreadystatechange = function() {
-					if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
-						alert(xhttp.response)
-						// if (output === 'User Already exist please login')
-						// {
-						// 	window.location.href="login.php"
-						// } 
-						window.location.href = "login.php" // display the content (response) from the serverside page
+			//alert(first,pswrd,last,email,enrollment,cpswr);
+			xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
+					var output = xhttp.response
+					if (output === 'Wrong user name or password') {
+						alert('Wrong user name or password')
+						window.location.href = "login.php"
+					} else {
+
+						window.location.href = "insurance.php" // display the content (response) from the serverside page
+
 					}
 				}
-
-				xhttp.open("POST", "db.php", true); // this is the url
-				parameters = "email= " + email + "&bday=" + bday + "&nationality=" + nationality + "&gender=" + gender + "&pnumber=" + pnumber + "&expdate=" + expdate + "&ccode=" + ccode + "&mnumber=" + mnumber + "&straddr=" + straddr + "&city=" + city + "&state=" + state + "&country=" + country + "&zipcode=" + zipcode + "&first=" + first + "&last=" + last + "&pswrd=" + pswrd + "&cpswrd=" + cpswrd;
-				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send(parameters);
-			} else {
-				window.location.href = "signup.php"
 			}
+
+			xhttp.open("POST", "check.php", true); // this is the url
+			parameters = "email= " + email + "&pwrd=" + password;
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(parameters);
 		}
 	</script>
-
+	<title>Sign Up</title>
 </head>
 
 <body>
@@ -133,34 +71,29 @@
 		</div>
 	</div>
 	<!-- Body -->
-	<div class="bg-image">
+	<div class="signup-bg"></div>
 
-
-	</div>
-
-	<div class="bg-text">
-		<div class='row g-5'>
-			<div class='col-sm-6'><input type="Text" placeholder="First name" id="fname" style="width:100%" required></div>
-			<div class='col-sm-6'><input type="Text" placeholder="Last name" id="lname" style="width:100%"></div>
-			<div class='col-sm-6' style="color:white;text-align:left">Date of Birth:</div>
-			<div class='col-sm-6'><input type="Date" id="bdate" style="width:100%;border-radius: 5px;border-color: white"></div>
-			<div class='col-sm-6'><input type="Text" placeholder="Nationality" id="nationality" style="width:100%"></div>
-			<div class='col-sm-6'>
-				<!-- <label class="form-label" for="d_date">Gender</label> -->
-				<select class="form-control mt-1" id="gender" name="airline_name" style="width:100%">
-					<option value="M">Male</option>
-					<option value="F">Female</option>
-				</select>
+	<div class="signup-body">
+		<div class='row  px-4'>
+			<div class="col-12  fw-bolder pb-3 mb-3" style="border-bottom: 4px solid black; color:white;">
+				<h1>Sign Up</h1>
 			</div>
-			<div class='col-sm-6' style="color:white;text-align:left;display: flex;align-items: center;">Passport No :</div>
-			<div class='col-sm-6'><input type="Text" id="pnumber" placeholder="Passport number" style="width:100%;border-radius: 5px;border-color: white"></div>
-			<div class='col-sm-6 mt-2' style="color:white;text-align:left">Passport Exp date :</div>
-			<div class='col-sm-6 mt-1'><input type="date" id="pexpdate" placeholder="Passport number" style="width:100%;border-radius: 5px;border-color: white"></div>
-			<div class='col-sm-6 my-3' style="color:white;text-align:left">Email :</div>
-			<div class='col-sm-6 my-3'><input type="email" id="email" placeholder="Email" style="width:100%;border-radius: 5px;border-color: white"></div>
-			<div class='col-sm-3' style="color:white;text-align:left;display: flex;align-items: center;">Mobile :</div>
-			<div class='col-sm-3'>
-				<select id="countryCode" style="width:100%;padding:2px 3px 0 0;margin-top: 10px">
+			<!-- <div class='col-12 my-1' style="color:white">
+				First & Last Name
+			</div> -->
+			<div class='col-6 mb-1'>
+				<input class="form-control" type="Text" placeholder="First name" id="fname" style="width:100%" required>
+			</div>
+			<div class='col-6 mb-1'>
+				<input class="form-control" type="Text" placeholder="Last name" id="lname" style="width:100%">
+			</div>
+			<div class='col-6 my-1'>
+				<label class="form-label " for="email" style="color:white">Email</label>
+				<input class="form-control" type="email" id="email" placeholder="Email" style="width:100%;">
+			</div>
+			<div class="col-2 my-1">
+				<label class="form-label " for="mnumber" style="color:white">Mobile No</label>
+				<select class="form-control" id="countryCode" style="width:100%;">
 					<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 					<option data-countryCode="US" value="1">USA (+1)</option>
 					<optgroup label="Other countries">
@@ -381,28 +314,62 @@
 					</optgroup>
 				</select>
 			</div>
-			<div class='col-sm-6'><input type="text" id="mnumber" placeholder="Mobile no" style="width:100%"></div>
-			<div class='col-sm-6'><input type="password" id="pswrd" placeholder="Password" style="width:100%"></div>
-			<div class='col-sm-6'><input type="password" id="cpswrd" placeholder="Confirm password" style="width:100%"></div>
-			<div class='col-sm-12'>
-				<input type="text" id="straddr" placeholder="Street Address" style="width:100%">
+			<div class="col-4 my-1">
+				<label class="form-label " for="" style="color:transparent">.</label>
+				<input class="form-control" type="text" id="mnumber" placeholder="Mobile no" style="width:100%">
 			</div>
-			<div class='col-sm-6'>
-				<input type="text" id="city" placeholder="City" style="width:100%">
+			<div class='col-4 my-1'>
+				<label class="form-label" for="bdate" style="color:white">Date of Birth</label>
+				<input class="form-control" type="Date" id="bdate" style="width:100%;">
 			</div>
-			<div class='col-sm-6 '>
-				<input type="text" id="state" placeholder="State" style="width:100%">
+			<div class='col-4 my-1'>
+				<label class="form-label" for="bdate" style="color:white">Nationality</label>
+				<input class="form-control" type="Text" placeholder="Nationality" id="nationality" style="width:100%">
 			</div>
-			<div class='col-sm-6 '>
-				<input type="text" id="country" placeholder="Country" style="width:100%">
+			<div class='col-4 my-1'>
+				<label class="form-label" for="bdate" style="color:white">Gender</label>
+				<select class="form-control" id="gender" name="airline_name" style="width:100%">
+					<option value="M">Male</option>
+					<option value="F">Female</option>
+				</select>
 			</div>
-			<div class='col-sm-6 '>
-				<input type="text" id="zipcode" placeholder="Zipcode" style="width:100%">
+			<div class='col-6 my-1'>
+				<label class="form-label " for="pnumber" style="color:white">Passport No</label>
+				<input class="form-control" type="Text" id="pnumber" placeholder="Passport number" style="width:100%;">
+			</div>
+			<div class='col-6 my-1'>
+				<label class="form-label " for="pexpdate" style="color:white">Passport Exp date</label>
+				<input class="form-control" type="date" id="pexpdate" placeholder="Passport number" style="width:100%;">
+			</div>
+			<!-- <div class='col-12 mt-1'>
+				<label class="form-label " for="mnumber" style="color:white">Address</label>
+			</div> -->
+			<div class='col-12 my-1'>
+				<input class="form-control" type="text" id="straddr" placeholder="Street Address" style="width:100%">
+			</div>
+			<div class='col-3 my-1'>
+				<input class="form-control" type="text" id="city" placeholder="City" style="width:100%">
+			</div>
+			<div class='col-3 my-1'>
+				<input class="form-control" type="text" id="state" placeholder="State" style="width:100%">
+			</div>
+			<div class='col-3 my-1'>
+				<input class="form-control" type="text" id="country" placeholder="Country" style="width:100%">
+			</div>
+			<div class='col-3 my-1'>
+				<input class="form-control" type="text" id="zipcode" placeholder="Zipcode" style="width:100%">
+			</div>
+			<div class='col-6 my-1'>
+				<input class="form-control" type="password" id="pswrd" placeholder="Password" style="width:100%">
+			</div>
+			<div class='col-6 my-1'>
+				<input class="form-control" type="password" id="cpswrd" placeholder="Confirm password" style="width:100%">
+			</div>
+			<div class='col-12 my-3'>
+				<button type="submit" value="signup" class="btn btn-dark" onclick="ValidateEmail()">Sign up</button>
 			</div>
 		</div>
-		<button type="submit" value="signup" class="btn btn-secondary" onclick="ValidateEmail()">Sign up</button>
 	</div>
-
 
 </body>
 
