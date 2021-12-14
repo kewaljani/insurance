@@ -365,7 +365,7 @@
 			<div class='col-6 my-1'>
 				<input class="form-control" type="password" id="cpswrd" placeholder="Confirm password" style="width:100%">
 			</div>
-			<div class='col-12 my-3'>
+			<div class='col-12 my-3' >
 				<button type="submit" value="signup" class="btn btn-dark" onclick="ValidateEmail()">Sign up</button>
 			</div>
 		</div>

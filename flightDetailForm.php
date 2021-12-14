@@ -91,7 +91,7 @@
                 <div class="container-fluid ">
                     <div class="raw w-100 d-flex justify-content-between">
                         <div class="col">
-                            <a class="navbar-brand" href="#">LOGO</a>
+                            <a class="navbar-brand" href="#">SAME INSURANCE</a>
                         </div>
                         <div class="col">
                             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor02">
@@ -304,7 +304,7 @@
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <!-- Submit button -->
-                            <button type="submit" class="btn-secondary mt-4 mb-4">Submit</button>
+                            <button type="submit" class=" btn btn-dark mt-4 mb-4">Submit</button>
                         </div>
                     </div>
                 </form>

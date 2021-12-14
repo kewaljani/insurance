@@ -80,13 +80,13 @@
           <label class="form-label text_white" for="pwrd" style="color:white">Email Id</label>
         </div>
         <div class='col-sm-12'>
-          <input id="email" type="email" name="email" style="width:100%">
+          <input class="form-control" id="email" type="email" name="email" style="width:100%">
         </div>
         <div class='col-sm-12 pt-2'>
           <label class="form-label text_white" for="pwrd" style="color:white">Password</label>
         </div>
         <div class='col-sm-12 '>
-          <input type="password" id="password" name="pwrd" style="width:100%">
+          <input class="form-control" type="password" id="password" name="pwrd" style="width:100%">
         </div>
         <div class='col-sm-12 py-4'>
           <button type="submit" class="btn btn-dark" onclick="login()">Sign up</button>
