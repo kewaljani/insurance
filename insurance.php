@@ -40,9 +40,10 @@
             var ccode = document.getElementById('cnumber').value;
             var contact = document.getElementById('contact').value;
             var peopleno = document.getElementById('peopleno').value;
+            var insurance_type = document.getElementById('insurance_type').value;
             d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
             let expires = "expires=" + d.toUTCString();
-            document.cookie = "total" + "=" + peopleno + ";" + expires;
+            document.cookie = "total" + "=" + peopleno +";" + expires;
             var data = document.getElementById('member_type').value;
             // alert(document.cookie)
             // alert(lname)
@@ -50,7 +51,7 @@
             // alert(contact)
             // alert(peopleno)
             // alert(data)
-            var insurance_type = document.getElementById('insurance_type').value;
+            
             if (data === 'airline') {
                 var membership = document.getElementById('membership').value;
                 var Airline_member = document.getElementById('Airline_member').value;
@@ -86,7 +87,7 @@
                 }
             }
             xhttp.open("POST", "insurancecheck.php", true); // this is the url
-            parameters = "fname= " + fname + "&lname=" + lname + "&ccode=" + ccode + "&contact=" + contact + "&peopleno=" + peopleno + "&data=" + 'd';
+            parameters = "fname= " + fname + "&lname=" + lname + "&ccode=" + ccode + "&contact=" + contact + "&peopleno=" + peopleno + "&data=" + 'd'+"&insurance=" + insurance_type;
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send(parameters);
         }

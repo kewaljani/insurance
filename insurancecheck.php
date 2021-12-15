@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION["passengerno"] =  $_REQUEST['peopleno'];
+$_SESSION['insurance'] = $_REQUEST['insurance'];
 $firstname = $_REQUEST["fname"];
 $lastname = $_REQUEST["lname"];
 $ccode = $_REQUEST['ccode'];

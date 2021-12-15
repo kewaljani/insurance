@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +17,64 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function retrive()
+          {
+            var people = document.cookie;
+            // alert(people);
+            var total = people.split(';')[0];
+            var insurance = people.split(';')[1];
+            total = total.split('=')[1];
+            insurance = insurance.split('=')[1];
+            // alert(insurance);
+            alert(total);                    //alert("hey")
+            // alert(insurance);        //var uname = document.getElementById("uname").value;
+                    var xhttp;
+                    xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                    xhttp.onreadystatechange = function() {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
+                            //echo myarray.row;
+                            alert(xhttp.response);                            // 
+                            var myObj = JSON.parse(JSON.stringify(this.responseText));
+                            var array=myObj.split('<br>');
+                            // alert(array[0]);
+                            var display= JSON.parse(array[0]);
+                            // alert(display.name);
 
+                            // document.getElementById("login_name").innerHTML=display.display;
+                            // for (i = 0; i <array.length-1; i++) {
+                              
+                                var parser=JSON.parse(array[0]);
+                            //     document.getElementById("view"+i).style.display = "block";
+                            //     // alert("name"+i);
+                            document.getElementById("cname").innerHTML =display.name;// display the content (response) from the serverside page
+                            document.getElementById("contact").innerHTML =display.mobileno;// display the content (response) from the serverside page
+                            document.getElementById("dob").innerHTML =display.dob;// display the content (response) from the serverside page
+                            document.getElementById("email").innerHTML =display.email;// display the content (response) from the serverside page
+                            document.getElementById("desc").innerHTML ="Description :"+display.description;// display the content (response) from the serverside page
+                            document.getElementById("cost").innerHTML =display.cost;// display the content (response) from the serverside page
+                            document.getElementById("passenger").innerHTML =display.total;// display the content (response) from the serverside page
+                            document.getElementById("final").innerHTML =display.total*display.cost;// display the content (response) from the serverside page
+                            document.getElementById("final2").innerHTML =display.total*display.cost;// display the content (response) from the serverside page
+                            // document.getElementById("nationality"+i).innerHTML ="Nationality = "+parser.nationality;// display the content (response) from the serverside page
+                            // document.getElementById("passport"+i).innerHTML ="passport no = "+parser.passport;// display the content (response) from the serverside page
+                            // document.getElementById("mobile"+i).innerHTML ="mobile no = "+parser.mobileno;// display the content (response) from the serverside page
+                            //     // document.getElementById(i+1).innerHTML= parser.subject;
+                            // }
+
+                        }
+                    }
+                    xhttp.open("POST", "retriveinvoice.php", true); // this is the url
+                    parameters = "totalp="+total;
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(parameters);
+}
+    </script>>
     <title>Invoice</title>
+
 </head>
 
-<body style="background-color:gray">
+<body style="background-color:gray" onload="retrive();">
     <!-- Header -->
     <div class="row">
         <div class="col">
@@ -102,10 +158,10 @@
                                 <div class="card height" style="min-height: 270px;">
                                     <div class="card-header">Customer</div>
                                     <div class="card-block p-3">
-                                        <p><strong>Name:</strong>&nbsp;XYZ</p>
-                                        <p><strong>Email:</strong>&nbsp;xyz@gmail.com</p>
-                                        <p><strong>DOB:</strong>&nbsp;23/5/1999</p>
-                                        <p><strong>Address:</strong>&nbsp;1111 Army Navy Drive Arlington VA</p>
+                                        <p id="cname"><strong >Name:</strong>&nbsp;XYZ</p>
+                                        <p id="email"><strong>Email:</strong>&nbsp;xyz@gmail.com</p>
+                                        <p id="dob"><strong>DOB:</strong>&nbsp;23/5/1999</p>
+                                        <p id="contact" ><strong>Contact:</strong>&nbsp;1111 Army Navy Drive Arlington VA</p>
                                     </div>
                                 </div>
                             </div>
@@ -123,8 +179,8 @@
                                 <div class="card height" style="min-height: 270px;">
                                     <div class="card-header">Insurance Detail</div>
                                     <div class="card-block p-3">
-                                        <p><strong>Provider:</strong>&nbsp;Insurance-Company name</p>
-                                        <p><strong>Address:</strong>&nbsp;1111 Army Navy Drive Arlington VA</p>
+                                        <p><strong>Type:</strong>&nbsp;<?php echo $_SESSION['insurance'] ?></p>
+                                        <p id="desc"><strong>Address:</strong>&nbsp;1111 Army Navy Drive Arlington VA</p>
                                     </div>
                                 </div>
                             </div>
@@ -136,17 +192,18 @@
                                 <thead>
                                     <tr>
                                         <td><strong>Insurance Name</strong></td>
-                                        <td class="text-xs-center"><strong>Insurance ID</strong></td>
-                                        <td class="text-xs-center"><strong>Insurance Discription</strong></td>
-                                        <td class="text-xs-right"><strong>Cost</strong></td>
+                                        <td class="text-xs-center"><strong>Insurance cost</strong></td>
+                                        <td class="text-xs-center"><strong>Total Passenger</strong></td>
+                                        <td class="text-xs-right"><strong>Total Cost</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>ABCD</td>
-                                        <td class="text-xs-center">12345</td>
-                                        <td class="text-xs-center">Samsung Galaxy S5 Extra Battery</td>
-                                        <td class="text-xs-right">$1000.00</td>
+                                        <td><?php echo $_SESSION['insurance']; ?></td>
+                                        <td class="text-xs-center" id="cost">12345</td>
+                                        <td class="text-xs-center" id="passenger" >Samsung Galaxy S5 Extra Battery</td>
+                                        <!-- <td class="text-xs-center" id="passenger" >Samsung Galaxy S5 Extra Battery</td> -->
+                                        <td class="text-xs-right" id="final2">$1000.00</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
@@ -154,7 +211,7 @@
                                         <td></td>
                                         <td class="text-xs-center"></td>
                                         <td class="text-xs-center"><strong>Total</strong></td>
-                                        <td class="text-xs-right"><strong>$1000.00</strong></td>
+                                        <td class="text-xs-right" id="final"><strong>$1000.00</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
