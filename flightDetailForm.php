@@ -114,11 +114,11 @@
     <!-- SideBar -->
     <div class="sidebar-container" style="box-shadow: inset 0 0 10px #000000; border-left:none">
         <ul class="sidebar-navigation">
-            <li>
+           <!--  <li>
                 <a href="home.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i>TimeLine
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="flightDetailForm.php">
                     <i class="fa fa-plane" aria-hidden="true"></i>Flights
@@ -223,10 +223,11 @@
                                     </div>
                                     <div class="col-12 mt-2">
                                         <div class="form-check">
-                                            <input class="assistance" name=assistance type="checkbox" value="Disability" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Disability and Mobility Assistance
-                                            </label>
+                                             <label class="form-label text_white" for="airline_name"> Disability and Mobility Assistance</label>
+                                     <select class="form-control" id="airline_name" name="airline_name" >
+                                         <option  value="American Airlines">Yes</option> 
+                                         <option  value="etBlue Airways">No</option> 
+                                    </select>
                                         </div>
                                     </div>
                                     <div class="col-12 mt-2">

@@ -68,15 +68,14 @@ session_start();
                         if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
                             //echo myarray.row;
                         var myObj = JSON.parse(JSON.stringify(this.responseText));
-                                var array=myObj.split('<br>');
+                        var array=myObj.split('<br>');
                             // alert(array)
 
                             var display= JSON.parse(array[0]);
                             // alert(display.pid);
 
                             // document.getElementById("login_name").innerHTML=display.display;
-                            for (i = 0; i <array.length-1; i++) {
-                              
+                             for (i = 0; i <array.length-1; i++) {
                                 var parser=JSON.parse(array[i]);
                                 document.getElementById("view"+i).style.display = "block";
                                 // alert("name"+i);

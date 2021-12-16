@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function check()
+        {
 
+        var amount = document.getElementById('amount').value;
+        if (amount><?php echo $_SESSION['amountl']; ?>)
+        {
+            alert("please enter valid value");
+        }
+        if(<?php echo $_SESSION['amountl']; ?> ==0)
+        {
+            alert("thankyou");
+             window.location.href="insurance.php";
+        }
+        else{
+            var xhttp;
+                    xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                    xhttp.onreadystatechange = function() {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            alert(xhttp.response);
+                             var myObj = JSON.parse(JSON.stringify(this.responseText));
+                             // alert(myObj);
+                                // var array=myObj.split('<br>');
+                                // var display= JSON.parse(array[0]);
+                                // alert(display)
+                                window.location.href="paymentmethod.php";
+                            }
+                        } 
+                    xhttp.open("POST", "paymentsess.php", true); // this is the url
+                    parameters = "amount= "+amount;
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(parameters);
+
+
+        // alert(amount);
+        }
+        }
+    </script>
     <title>Payment</title>
 </head>
 
@@ -84,7 +124,7 @@
         <!-- Content -->
         <div class="row p-4">
             <div class="col-8">
-                <form action="paymentmethod.php" method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
+                <form method="POST" class="form_light_detail" id="form" enctype="multipart/form-data">
                     <div class="row p-4">
                         <div class="col-12 text_white fw-bolder">
                             <h1>Payment</h1>
@@ -122,7 +162,7 @@
                         </div>
                         <div class="col-12 d-flex justify-content-end">
                             <div class="form-outline">
-                                <button type="submit" class="btn btn-secondary mt-4 mb-4">Submit</button>
+                                <button type="button" class="btn btn-secondary mt-4 mb-4" onclick="check();">Submit</button>
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,7 @@ else
 	$flight = "SELECT * from `kjana_fa` where `flight_id`=".$_SESSION['flight_id']."";
 	$ins = "SELECT `cost`,`discription` from `kjana_ins` where `INAME`='".$_SESSION['insurance']."'";
 	$count = "SELECT count(passenger_id) from `kjana_psngr` where booking_id='".$_SESSION['pid']."';";
+
 	// echo $count;
 	$sq=mysqli_query($conn,$q);
 	$sq2=mysqli_query($conn,$flight);
@@ -42,8 +43,14 @@ else
 					'dtime'=>$row2['dtime'],
 					'description'=>$row3['discription'],
 					'cost'=>$row3['cost'],
-					'total'=>$row4[0]
+					'total'=>$row4[0],
+					'fname'=>$row2['aname']
 				);
+	$amount = $row3['cost']*$row4[0];
+	$_SESSION['amountl'] = $amount;
+	// echo $amount;
+	$insert = "INSERT into `kjana_invoice` ( `invoice_amount`, `amount_left`, `flight_id`) VALUES ('".$amount."','".$amount."','".$_SESSION['flight_id']."') " ;
+	$sq5 = mysqli_query($conn,$insert);
 	 echo json_encode($myArr)."<br>";
 }	
 ?>

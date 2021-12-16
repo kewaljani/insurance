@@ -1,4 +1,4 @@
-<?php 
+<?php  
 session_start();
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,10 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+        function change()
+        {
+            window.location.href="paymentmethod.php"
+        }
         function retrive()
           {
             var people = document.cookie;
@@ -56,6 +60,8 @@ session_start();
                             document.getElementById("passenger").innerHTML =display.total;// display the content (response) from the serverside page
                             document.getElementById("final").innerHTML =display.total*display.cost;// display the content (response) from the serverside page
                             document.getElementById("final2").innerHTML =display.total*display.cost;// display the content (response) from the serverside page
+                            document.getElementById("fname").innerHTML =display.fname;// display the content (response) from the serverside page
+                            document.getElementById("fdate").innerHTML =display.dtime;// display the content (response) from the serverside page
                             // document.getElementById("nationality"+i).innerHTML ="Nationality = "+parser.nationality;// display the content (response) from the serverside page
                             // document.getElementById("passport"+i).innerHTML ="passport no = "+parser.passport;// display the content (response) from the serverside page
                             // document.getElementById("mobile"+i).innerHTML ="mobile no = "+parser.mobileno;// display the content (response) from the serverside page
@@ -109,11 +115,11 @@ session_start();
     <!-- SideBar -->
     <div class="sidebar-container" style="box-shadow: inset 0 0 10px #000000; border-left:none">
         <ul class="sidebar-navigation">
-            <li>
+            <!-- <li>
                 <a href="home.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i>TimeLine
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="flightDetailForm.php">
                     <i class="fa fa-plane" aria-hidden="true"></i>Flights
@@ -169,9 +175,10 @@ session_start();
                                 <div class="card height" style="min-height: 270px;">
                                     <div class="card-header">Flight Detail</div>
                                     <div class="card-block p-3">
-                                        <p><strong>Flight Name:</strong>&nbsp;Air India</p>
-                                        <p><strong>Departure Date:</strong>&nbsp;11/10/2022</p>
-                                        <p><strong>Detail:</strong>&nbsp;wer erthj werty werty wert wert.</p>
+                                        <p id="fname"><strong>Flight Name:</strong>&nbsp;Air India</p>
+                                        <p id="fdate"><strong>Departure Date:</strong>&nbsp;11/10/2022</p>
+                                        <p id="pdate"><strong>Payment Due Date:</strong>&nbsp;11/10/2022</p>
+                                        <!-- <p><strong>Detail:</strong>&nbsp;wer erthj werty werty wert wert.</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +187,7 @@ session_start();
                                     <div class="card-header">Insurance Detail</div>
                                     <div class="card-block p-3">
                                         <p><strong>Type:</strong>&nbsp;<?php echo $_SESSION['insurance'] ?></p>
-                                        <p id="desc"><strong>Address:</strong>&nbsp;1111 Army Navy Drive Arlington VA</p>
+                                      <strong>Description:</strong>&nbsp;  <p id="desc">1111 Army Navy Drive Arlington VA</p>
                                     </div>
                                 </div>
                             </div>
@@ -215,6 +222,10 @@ session_start();
                                     </tr>
                                 </tbody>
                             </table>
+                            <div class="col-12 d-flex justify-content-end">
+                            <!-- Submit button -->
+                            <button type="button" class=" btn btn-dark mt-4 mb-4" onclick="change();">Continue to Payment</button>
+                        </div>
                         </div>
                     </div>
                 </div>

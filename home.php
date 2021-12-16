@@ -56,11 +56,11 @@ session_start();
     <!-- SideBar -->
     <div class="sidebar-container" style="box-shadow: inset 0 0 10px #000000; border-left:none">
         <ul class="sidebar-navigation">
-            <li>
+            <!-- <li>
                 <a href="home.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i>TimeLine
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="flightDetailForm.php">
                     <i class="fa fa-plane" aria-hidden="true"></i>Flights

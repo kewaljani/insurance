@@ -69,7 +69,7 @@ echo $_SESSION["passengerno"];
                         //  window.location.href="login.php"
                         // } 
                         // window.location.href="login.php"// display the content (response) from the serverside page
-                        window.location.href = "editpage.php"
+                        window.location.href = "adminpassenger.php"
                     }
                 }
 

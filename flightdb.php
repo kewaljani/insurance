@@ -23,9 +23,9 @@ $host = "localhost";
         die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
         }
         else{
-        	$q = "INSERT INTO `kjana_fa`(`dairport_code`, `aairport_code`, `dtime`, `atime`,`aname`) VALUES ('".$dac."','".$aac."','".$dt."','".$at."','".$aname."');";
+        	$q = "INSERT INTO `kjana_fa`(`dairport_code`, `aairport_code`, `dtime`, `atime`,`aname`,`no_flight`) VALUES ('".$dac."','".$aac."','".$dt."','".$at."','".$aname."','".$flightno."');";
 
-
+        	echo $q;
 	// $sq=mysqli_query($conn,$q);
 	 if ($conn->query($q) === TRUE) {
 
@@ -53,7 +53,7 @@ $host = "localhost";
 	 	echo "inserted";
 	 }
 	 else{
-	 	echo "Error: " . $faid. "<br>" . $conn->error;
+	 	echo "Error:".$q.". <br>" . $conn->error;
 	 }
 
         $conn->close();

@@ -61,6 +61,20 @@
                 alert(Airline_member);
                 alert(membership_start);
                 alert(membership_end);
+                var xhttp;
+                //alert(first,pswrd,last,email,enrollment,cpswr);
+                xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
+                        var x = xhttp.response
+                        if (x === "inserted") {
+                            window.location.href = "passengerdetails.php" // display the content (response) from the serverside page
+                        } else {
+                            alert("You cannot enter your own mobile number for Emergency contacts");
+                            window.location.href = "insurance.php";
+                        }
+                    }
+                }
             }
             if (data === 'agent') {
 
@@ -68,6 +82,20 @@
                 var agent_website = document.getElementById('agent_website').value;
                 var agent_number = document.getElementById('agent_number').value;
                 var countryCode = document.getElementById('countryCode').value;
+                var xhttp;
+                //alert(first,pswrd,last,email,enrollment,cpswr);
+                xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) { // Check the status - if everything goes fine
+                        var x = xhttp.response
+                        if (x === "inserted") {
+                            window.location.href = "passengerdetails.php" // display the content (response) from the serverside page
+                        } else {
+                            alert("You cannot enter your own mobile number for Emergency contacts");
+                            window.location.href = "insurance.php";
+                        }
+                    }
+                }
 
             }
             if (data === 'direct') {
@@ -153,11 +181,11 @@
     <!-- SideBar -->
     <div class="sidebar-container" style="box-shadow: inset 0 0 10px #000000; border-left:none">
         <ul class="sidebar-navigation">
-            <li>
+            <!-- <li>
                 <a href="home.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i>TimeLine
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="flightDetailForm.php">
                     <i class="fa fa-plane" aria-hidden="true"></i>Flights

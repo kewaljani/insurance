@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,11 +52,11 @@
     <!-- SideBar -->
     <div class="sidebar-container" style="box-shadow: inset 0 0 10px #000000; border-left:none">
         <ul class="sidebar-navigation">
-            <li>
+            <!-- <li>
                 <a href="home.php">
                     <i class="fa fa-tachometer" aria-hidden="true"></i>TimeLine
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="flightDetailForm.php">
                     <i class="fa fa-plane" aria-hidden="true"></i>Flights
@@ -90,7 +93,7 @@
                             <h1>Choose Payment Method</h1>
                         </div>
                         <div class="col-12 text_white fw-bolder border-bottom border-top py-4">
-                            <h5>Payment of $50000</h5>
+                            <h5><?php echo "Amount left to Pay: ".$_SESSION['amountl'] ?></h5>
                         </div>
                         <div class="col-12 my-4">
                             <div class="py-3">
@@ -123,7 +126,7 @@
                             <a href="payment.php">
                                 <div class="btn btn-secondary w-100">
 
-                                    Split the Payment
+                                    Payment
 
                                 </div>
                             </a>

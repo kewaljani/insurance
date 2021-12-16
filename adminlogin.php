@@ -18,6 +18,8 @@
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       var xhttp;
+      alert(email);
+      alert(password);
       //alert(first,pswrd,last,email,enrollment,cpswr);
       xhttp = new XMLHttpRequest(); // Obect of xmlhttp request
       xhttp.onreadystatechange = function() {
@@ -27,12 +29,12 @@
             alert('Wrong user name or password')
             window.location.href = "login.php"
           } else {
-            window.location.href = "insurance.php" // display the content (response) from the serverside page
+            window.location.href = "adminpassenger.php" // display the content (response) from the serverside page
 
           }
         }
       }
-      xhttp.open("POST", "check.php", true); // this is the url
+      xhttp.open("POST", "adcheck.php", true); // this is the url
       parameters = "email= " + email + "&pwrd=" + password;
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send(parameters);
@@ -89,7 +91,7 @@
           <input class="form-control" type="password" id="password" name="pwrd" style="width:100%">
         </div>
         <div class='col-sm-12 py-4'>
-          <button type="submit" class="btn btn-dark" onclick="login()">Sign up</button>
+          <button type="button" class="btn btn-dark" onclick="login()">Sign up</button>
         </div>
         <div class='col-sm-12 pt-4 text_white fw-bolder pt-3 mt-3' style="color:white;border-top: 4px solid black; color:white;">
           First time user? <span onclick="change()" style="text-decoration: underline;cursor: pointer;">CREATE ACCOUNT</span>
