@@ -217,20 +217,65 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="row">
+                                <!-- <div class="row"> -->
                                     <div class="col-12 mt-4">
                                         <label class="assistance text_white" name=assistance value="special assistance" for="flight_id">Special Assistances</label>
                                     </div>
-                                    <div class="col-12 mt-2">
+                                    <div class="row">
+                                    <div class="col-6 ">
                                         <div class="form-check">
-                                             <label class="form-label text_white" for="airline_name"> Disability and Mobility Assistance</label>
-                                     <select class="form-control" id="airline_name" name="airline_name" >
+                                             <label class="form-label text_white" for="airline_name"> Disability and Mobility</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                     <select style="width:100%" id="airline_name" name="airline_name" >
+                                         <option  value="yes">Yes</option> 
+                                         <option  value="etBlue Airways">No</option> 
+                                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-6 ">
+                                        <div class="form-check">
+                                             <label class="form-label text_white" for="airline_name"> Travelling with infants</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                     <select style="width:100%" id="airline_name" name="airline_name" >
+                                         <option  value="yes">Yes</option> 
+                                         <option  value="etBlue Airways">No</option> 
+                                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-6 ">
+                                        <div class="form-check">
+                                             <label class="form-label text_white" for="airline_name"> Travelling with animals</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                     <select style="width:100%"" id="airline_name" name="airline_name" >
+                                         <option  value="yes">Yes</option> 
+                                         <option  value="etBlue Airways">No</option> 
+                                    </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <div class="col-6 ">
+                                        <div class="form-check">
+                                             <label class="form-label text_white" for="airline_name">  Elderly passenger</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                     <select style="width:100%" id="airline_name" name="airline_name" >
                                          <option  value="American Airlines">Yes</option> 
                                          <option  value="etBlue Airways">No</option> 
                                     </select>
                                         </div>
                                     </div>
-                                    <div class="col-12 mt-2">
+                                    
+                                    <!-- <div class="col-12 mt-2">
                                         <div class="form-check">
                                             <input class="assistance" name=assistance type="checkbox" value="Travelling with infants" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -253,8 +298,8 @@
                                                 Elderly passenger
                                             </label>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div> -->
                             </div>
                             <div class="col-6 ">
                                 <div class="row">
