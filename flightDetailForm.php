@@ -230,7 +230,7 @@
                                     <div class="col-6">
                                      <select style="width:100%" id="airline_name" name="airline_name" >
                                          <option  value="yes">Yes</option> 
-                                         <option  value="etBlue Airways">No</option> 
+                                         <option  value="No">No</option> 
                                     </select>
                                         </div>
                                     </div>
@@ -243,7 +243,7 @@
                                     <div class="col-6">
                                      <select style="width:100%" id="airline_name" name="airline_name" >
                                          <option  value="yes">Yes</option> 
-                                         <option  value="etBlue Airways">No</option> 
+                                         <option  value="No">No</option> 
                                     </select>
                                         </div>
                                     </div>
@@ -256,7 +256,7 @@
                                     <div class="col-6">
                                      <select style="width:100%"" id="airline_name" name="airline_name" >
                                          <option  value="yes">Yes</option> 
-                                         <option  value="etBlue Airways">No</option> 
+                                         <option  value="No">No</option> 
                                     </select>
                                         </div>
                                     </div>
@@ -269,8 +269,8 @@
                                     </div>
                                     <div class="col-6">
                                      <select style="width:100%" id="airline_name" name="airline_name" >
-                                         <option  value="American Airlines">Yes</option> 
-                                         <option  value="etBlue Airways">No</option> 
+                                         <option  value="Yes">Yes</option> 
+                                         <option  value="No">No</option> 
                                     </select>
                                         </div>
                                     </div>
